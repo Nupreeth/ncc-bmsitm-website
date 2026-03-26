@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | NCC BMSIT&M</title>
+  <meta name="description" content="Contact NCC BMSIT&M, reach the Associate NCC Officer, and access official unit channels." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="index.html">
+        <span class="brand-logos">
+          <picture class="img-frame logo-frame">
+            <img src="assets/logos/ncc-logo.png" alt="NCC Emblem" data-placeholder="true" loading="lazy" />
+            <div class="img-placeholder">NCC Logo</div>
+          </picture>
+          <picture class="img-frame logo-frame">
+            <img src="assets/logos/bmsit-logo.png" alt="BMSIT Logo" data-placeholder="true" loading="lazy" />
+            <div class="img-placeholder">BMSIT Logo</div>
+          </picture>
+        </span>
+        <span class="brand-divider"></span>
+        <span class="brand-text">
+          <span class="brand-title">NCC BMSIT&M</span>
+          <span class="brand-subtitle">39/17 NCC Company</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="primary-nav" class="nav-links">
+        <button class="nav-close" type="button" aria-label="Close navigation">X</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="activities.html">Activities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join NCC</a>
+        <a href="alumni.html">Alumni</a>
+        <a href="cadets-corner.html">Cadet's Corner</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero" style="min-height: 40vh;">
+      <picture class="img-frame hero-media">
+        <img src="assets/images/contact-hero.jpg" alt="BMSIT&M campus exterior" data-placeholder="true" loading="lazy" />
+        <div class="img-placeholder">CONTACT_HERO_IMAGE_PLACEHOLDER</div>
+      </picture>
+      <div class="container">
+        <p class="breadcrumb">Home &gt; Contact</p>
+        <h1>Contact</h1>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container contact-grid">
+        <div class="stack">
+          <div class="card reveal">
+            <h3>Associate NCC Officer</h3>
+            <p>Lt. Rani M.S.</p>
+            <p>39/17 NCC Company</p>
+          </div>
+          <div class="card reveal">
+            <h3>Primary Email</h3>
+            <p><a href="mailto:ncc@bmsit.in">ncc@bmsit.in</a></p>
+          </div>
+          <div class="card reveal">
+            <h3>Alternate Email</h3>
+            <p><a href="mailto:nccbmsit@gmail.com">nccbmsit@gmail.com</a></p>
+          </div>
+          <div class="card reveal">
+            <h3>Campus Address</h3>
+            <p>BMS Institute of Technology and Management, Doddaballapur Main Road, Avalahalli, Yelahanka, Bengaluru 560119.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Instagram</h3>
+            <p><a href="https://www.instagram.com/nccbmsit/" target="_blank" rel="noopener noreferrer">@nccbmsit</a></p>
+          </div>
+          <div class="card reveal">
+            <h3>Linktree</h3>
+            <p><a href="https://linktr.ee/nccbmsit" target="_blank" rel="noopener noreferrer">linktr.ee/nccbmsit</a></p>
+          </div>
+          <div class="card reveal">
+            <h3>Official BMSIT NCC Page</h3>
+            <p><a href="https://bmsit.ac.in/clubs-associations/ncc" target="_blank" rel="noopener noreferrer">bmsit.ac.in/clubs-associations/ncc</a></p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="img-frame" style="min-height: 320px;">
+            <img src="assets/images/contact-hero.jpg" alt="Campus map placeholder" data-placeholder="true" loading="lazy" />
+            <div class="img-placeholder">MAPS_EMBED_PLACEHOLDER - Replace with Google Maps embed</div>
+            <!-- Replace with Google Maps embed for BMSIT&M Yelahanka -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream">
+      <div class="container" style="max-width: 720px;">
+        <div class="form-card reveal">
+          <h2>Send a Message</h2>
+          <form data-form>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="contact-name" type="text" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="contact-email" type="email" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input id="contact-subject" name="contact-subject" type="text" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="contact-message" rows="4" required></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="margin-top: 16px; width: 100%;" type="submit">Send Message</button>
+          </form>
+          <div class="form-message" role="status">Message received. We'll respond to your query shortly.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="color: var(--ncc-white);">
+          <span class="brand-logos">
+            <picture class="img-frame logo-frame">
+              <img src="assets/logos/ncc-logo.png" alt="NCC Emblem" data-placeholder="true" loading="lazy" />
+              <div class="img-placeholder">NCC Logo</div>
+            </picture>
+            <picture class="img-frame logo-frame">
+              <img src="assets/logos/bmsit-logo.png" alt="BMSIT Logo" data-placeholder="true" loading="lazy" />
+              <div class="img-placeholder">BMSIT Logo</div>
+            </picture>
+          </span>
+          <span class="brand-text">
+            <span class="brand-title">NCC BMSIT&M</span>
+            <span class="brand-subtitle">Unity and Discipline</span>
+          </span>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="activities.html">Activities</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="join.html">Join NCC</a>
+          <a href="alumni.html">Alumni</a>
+          <a href="cadets-corner.html">Cadet's Corner</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>ncc@bmsit.in</p>
+        <p>nccbmsit@gmail.com</p>
+        <p>BMS Institute of Technology and Management, Avalahalli, Yelahanka, Bengaluru 560119</p>
+        <p><a href="https://www.instagram.com/nccbmsit/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        <p><a href="https://linktr.ee/nccbmsit" target="_blank" rel="noopener noreferrer">Linktree</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025-26 NCC BMSIT&M · 39/17 NCC Company · 39 Karnataka Battalion</div>
+  </footer>
+
+  <button class="scroll-top" type="button" aria-label="Scroll to top">↑</button>
+  <script defer src="js/main.js"></script>
+</body>
+</html>
