@@ -1,0 +1,102 @@
+[
+  {
+    "src": "/assets/gallery/aitsc/gallery-10.jpg",
+    "title": "Gallery 10",
+    "category": "aitsc"
+  },
+  {
+    "src": "/assets/gallery/aitsc/gallery-11.jpg",
+    "title": "Gallery 11",
+    "category": "aitsc"
+  },
+  {
+    "src": "/assets/gallery/annual-review/gallery-02.jpg",
+    "title": "Gallery 02",
+    "category": "annual-review"
+  },
+  {
+    "src": "/assets/gallery/annual-review/gallery-03.jpg",
+    "title": "Gallery 03",
+    "category": "annual-review"
+  },
+  {
+    "src": "/assets/gallery/annual-review/gallery-04.jpg",
+    "title": "Gallery 04",
+    "category": "annual-review"
+  },
+  {
+    "src": "/assets/gallery/annual-review/gallery-05.jpg",
+    "title": "Gallery 05",
+    "category": "annual-review"
+  },
+  {
+    "src": "/assets/gallery/blood-donation/gallery-06.jpg",
+    "title": "Gallery 06",
+    "category": "blood-donation"
+  },
+  {
+    "src": "/assets/gallery/blood-donation/gallery-07.jpg",
+    "title": "Gallery 07",
+    "category": "blood-donation"
+  },
+  {
+    "src": "/assets/gallery/candle-march/gallery-09.jpg",
+    "title": "Gallery 09",
+    "category": "candle-march"
+  },
+  {
+    "src": "/assets/gallery/para-basic/gallery-12.jpg",
+    "title": "Gallery 12",
+    "category": "para-basic"
+  },
+  {
+    "src": "/assets/gallery/republic-day/gallery-01.jpg",
+    "title": "Gallery 01",
+    "category": "republic-day"
+  },
+  {
+    "src": "/assets/gallery/republic-day/gallery-13.jpg",
+    "title": "Gallery 13",
+    "category": "republic-day"
+  },
+  {
+    "src": "/assets/gallery/republic-day/gallery-14.jpg",
+    "title": "Gallery 14",
+    "category": "republic-day"
+  },
+  {
+    "src": "/assets/gallery/republic-day/gallery-15.jpg",
+    "title": "Gallery 15",
+    "category": "republic-day"
+  },
+  {
+    "src": "/assets/gallery/republic-day/gallery-16.jpg",
+    "title": "Gallery 16",
+    "category": "republic-day"
+  },
+  {
+    "src": "/assets/gallery/republic-day/gallery-17.jpg",
+    "title": "Gallery 17",
+    "category": "republic-day"
+  },
+  {
+    "src": "/assets/gallery/training/gallery-08.jpg",
+    "title": "Gallery 08",
+    "category": "training"
+  },
+  {
+    "src": "/assets/gallery/training/gallery-19.jpg",
+    "title": "Gallery 19",
+    "category": "training"
+  },
+  {
+    "src": "/assets/gallery/training/gallery-20.jpg",
+    "title": "Gallery 20",
+    "category": "training"
+  },
+  {
+    "src": "/assets/gallery/walk4lake/gallery-18.jpg",
+    "title": "Gallery 18",
+    "category": "walk4lake"
+  }
+]
