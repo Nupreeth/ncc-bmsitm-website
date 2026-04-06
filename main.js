@@ -4,20 +4,6 @@ const navClose = document.querySelector(".nav-close");
 const navLinks = document.querySelectorAll(".nav-links a");
 const scrollTopBtn = document.querySelector(".scroll-top");
 
-const onScroll = () => {
-  const scrolled = window.scrollY > 80;
-  if (header) {
-    header.classList.toggle("scrolled", scrolled);
-  }
-  if (scrollTopBtn) {
-    scrollTopBtn.classList.toggle("visible", window.scrollY > 300);
-  }
-};
-
-window.addEventListener("scroll", onScroll, { passive: true });
-window.addEventListener("resize", onScroll);
-onScroll();
-
 if (navToggle && header) {
   navToggle.addEventListener("click", () => {
     header.classList.toggle("nav-open");
@@ -39,6 +25,28 @@ navLinks.forEach((link) => {
 });
 
 if (scrollTopBtn) {
+  if ("IntersectionObserver" in window) {
+    const sentinel = document.createElement("div");
+    sentinel.setAttribute("data-scroll-sentinel", "true");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.position = "absolute";
+    sentinel.style.top = "0";
+    sentinel.style.left = "0";
+    sentinel.style.width = "1px";
+    sentinel.style.height = "1px";
+    sentinel.style.pointerEvents = "none";
+    document.body.prepend(sentinel);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        scrollTopBtn.classList.toggle("visible", !entry.isIntersecting);
+      });
+    });
+    observer.observe(sentinel);
+  } else {
+    scrollTopBtn.classList.add("visible");
+  }
+
   scrollTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
