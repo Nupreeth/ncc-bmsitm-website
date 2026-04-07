@@ -172,6 +172,10 @@ body::before {
   object-position: center top;
 }
 
+.join-hero .hero-media img {
+  object-position: center 18%;
+}
+
 .scroll-top {
   background: var(--ncc-maroon);
   color: #ffffff;
@@ -180,6 +184,29 @@ body::before {
 
 .scroll-top:hover {
   background: #a40f1a;
+}
+
+.event-grid {
+  align-items: stretch;
+}
+
+.event-grid .card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.event-grid .card .img-frame:not(.avatar) {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 260px;
+  margin-bottom: 10px;
+}
+
+.event-grid .card .img-frame:not(.avatar) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .history-header {
