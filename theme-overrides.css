@@ -168,6 +168,10 @@ body::before {
   margin: 12px auto 20px;
 }
 
+.cta-media img {
+  object-position: center top;
+}
+
 .scroll-top {
   background: var(--ncc-maroon);
   color: #ffffff;
@@ -176,6 +180,19 @@ body::before {
 
 .scroll-top:hover {
   background: #a40f1a;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.history-header .btn {
+  margin-left: auto;
 }
 
 .btn-primary {
