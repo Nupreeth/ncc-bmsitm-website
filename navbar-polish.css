@@ -1,14 +1,14 @@
 .site-header {
-  background: rgba(7, 9, 14, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
 }
 
 .site-header.scrolled {
-  background: rgba(7, 9, 14, 0.95);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.35);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(29, 78, 216, 0.18);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.14);
 }
 
 .brand-logos {
@@ -21,8 +21,8 @@
   width: 56px;
   height: 56px;
   border-radius: 10px;
-  background: #0f172a;
-  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.25);
+  background: transparent;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
 }
 
 .logo-frame img {
@@ -30,12 +30,7 @@
   height: 100%;
   object-fit: contain;
   padding: 6px;
-}
-
-.logo-frame img[src*="bmsit-logo"] {
-  background: #f8fafc;
-  border-radius: 8px;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
+  background: transparent;
 }
 
 .nav-links a {

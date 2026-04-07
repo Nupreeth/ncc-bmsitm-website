@@ -1,44 +1,71 @@
 :root {
-  --ncc-olive: #0b0f16;
-  --ncc-olive-dark: #05070b;
-  --ncc-olive-light: #111827;
-  --ncc-maroon: #ef4444;
-  --ncc-gold: #3b82f6;
-  --ncc-gold-light: #93c5fd;
-  --ncc-cream: #0b0f16;
-  --ncc-white: #f8fafc;
-  --ncc-text-dark: #f8fafc;
-  --ncc-text-mid: #cbd5e1;
-  --ncc-text-light: #94a3b8;
-  --ncc-border: #1f2937;
-  --ncc-shadow: rgba(0, 0, 0, 0.5);
+  --ncc-olive: #f6f7fb;
+  --ncc-olive-dark: #0f172a;
+  --ncc-olive-light: #e8edf7;
+  --ncc-maroon: #c1121f;
+  --ncc-gold: #1d4ed8;
+  --ncc-gold-light: #60a5fa;
+  --ncc-cream: #f6f7fb;
+  --ncc-white: #ffffff;
+  --ncc-text-dark: #0f172a;
+  --ncc-text-mid: #475569;
+  --ncc-text-light: #64748b;
+  --ncc-border: #e2e8f0;
+  --ncc-shadow: rgba(15, 23, 42, 0.12);
+  --primary: #1e3a8a;
+  --secondary: #334155;
+  --accent: #c1121f;
+  --bg: #f6f7fb;
+  --bg-soft: #eef2ff;
+  --surface: rgba(255, 255, 255, 0.84);
+  --surface-strong: rgba(255, 255, 255, 0.95);
+  --surface-soft: rgba(15, 23, 42, 0.04);
+  --ink: #0f172a;
+  --ink-soft: #475569;
+  --navy: #1e3a8a;
+  --navy-bright: #1d4ed8;
+  --red: #c1121f;
+  --blue: #1d4ed8;
+  --gold: #f59e0b;
+  --line: rgba(15, 23, 42, 0.12);
+  --line-strong: rgba(15, 23, 42, 0.2);
+  --shadow-soft: 0 30px 70px rgba(15, 23, 42, 0.12);
+  --shadow-card: 0 16px 40px rgba(15, 23, 42, 0.12);
 }
 
 body {
-  background: var(--ncc-cream);
+  background: radial-gradient(circle at 20% -10%, rgba(29, 78, 216, 0.08), transparent 45%), #f6f7fb;
   color: var(--ncc-text-dark);
+}
+
+body::before {
+  background-image: none;
 }
 
 .section--white {
-  background: #0f172a;
+  background: #ffffff;
 }
 
 .section--cream {
-  background: #0b0f16;
+  background: #f6f7fb;
 }
 
 .section--dark {
-  background: #05070b;
-  color: var(--ncc-text-dark);
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.section--dark .section-subtitle {
+  color: rgba(248, 250, 252, 0.7);
 }
 
 .card {
-  background: #111827;
+  background: #ffffff;
   border-left-color: var(--ncc-maroon);
 }
 
 .img-placeholder {
-  background: rgba(7, 10, 16, 0.86);
+  background: rgba(15, 23, 42, 0.72);
   color: var(--ncc-gold-light);
 }
 
@@ -49,7 +76,7 @@ body {
 
 .hero::after,
 .page-hero::after {
-  background: rgba(7, 10, 16, 0.72);
+  background: rgba(15, 23, 42, 0.35);
 }
 
 .btn-primary {
@@ -58,7 +85,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: #dc2626;
+  background: #9f0f1a;
 }
 
 .btn-ghost {
@@ -68,7 +95,7 @@ body {
 
 .btn-ghost:hover {
   background: var(--ncc-gold);
-  color: #0b0f16;
+  color: #0f172a;
 }
 
 .tag--olive {
@@ -81,14 +108,49 @@ body {
   color: var(--ncc-gold);
 }
 
-.site-header {
-  background: rgba(7, 9, 14, 0.92);
+.brand {
+  color: var(--ncc-text-dark);
+}
+
+.brand-subtitle {
+  color: var(--ncc-text-light);
+}
+
+.brand-divider {
+  background: var(--ncc-maroon);
+}
+
+.nav-links a {
+  color: var(--ncc-text-dark);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--ncc-maroon);
   border-bottom-color: var(--ncc-maroon);
+}
+
+.nav-toggle {
+  color: var(--ncc-maroon);
+}
+
+.nav-toggle span {
+  background: var(--ncc-maroon);
+}
+
+.nav-close {
+  color: var(--ncc-maroon);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    background: #ffffff;
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+  }
+
+  .nav-links a {
+    border-bottom-color: rgba(15, 23, 42, 0.12);
+  }
 }
 
 .motto-watermark {
