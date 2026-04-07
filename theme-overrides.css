@@ -82,6 +82,11 @@ body::before {
   background: rgba(0, 0, 0, 0.28);
 }
 
+.hero .hero-media img {
+  filter: blur(1.4px);
+  transform: scale(1.03);
+}
+
 .hero-content {
   max-width: min(900px, 92vw);
   gap: 14px;
@@ -91,10 +96,9 @@ body::before {
   content: "";
   position: absolute;
   inset: -22px -28px;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 26px;
-  backdrop-filter: blur(6px);
   z-index: -1;
 }
 
