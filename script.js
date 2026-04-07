@@ -260,15 +260,37 @@
     return [];
   };
 
+  const extractTimestamp = (src) => {
+    const match = src.match(/(\d{10})/);
+    if (!match) return null;
+    const seconds = Number(match[1]);
+    if (!Number.isFinite(seconds)) return null;
+    return new Date(seconds * 1000);
+  };
+
   const init = async () => {
     const directoryItems = await fetchDirectoryItems();
     const items = directoryItems || (await fetchJsonItems());
 
-    state.items = items.map((item) => ({
-      src: item.src,
-      title: item.title,
-      category: normalizeCategory(item.category)
-    }));
+    const cutoff = new Date();
+    cutoff.setFullYear(cutoff.getFullYear() - 3);
+
+    state.items = items
+      .map((item) => {
+        const date = extractTimestamp(item.src || "");
+        return {
+          src: item.src,
+          title: item.title,
+          category: normalizeCategory(item.category),
+          date
+        };
+      })
+      .filter((item) => !item.date || item.date >= cutoff)
+      .sort((a, b) => {
+        const timeA = a.date ? a.date.getTime() : 0;
+        const timeB = b.date ? b.date.getTime() : 0;
+        return timeB - timeA;
+      });
 
     if (!state.items.length) {
       const empty = document.createElement("p");

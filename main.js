@@ -217,7 +217,14 @@ const InstagramGallery = {
       if (!res.ok) throw new Error("Could not load instagram-posts.json");
       const data = await res.json();
 
-      this.posts = data.posts || [];
+      const cutoff = new Date();
+      cutoff.setFullYear(cutoff.getFullYear() - 3);
+      this.posts = (data.posts || [])
+        .filter((post) => {
+          const date = new Date(post.date);
+          return Number.isFinite(date.getTime()) && date >= cutoff;
+        })
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
 
       if (lastUpdated && data.last_updated) {
         const date = new Date(data.last_updated);
@@ -361,7 +368,15 @@ async function initInstagramStrip() {
     }
 
     grid.innerHTML = "";
-    const recent = (data.posts || []).slice(0, 8);
+    const cutoff = new Date();
+    cutoff.setFullYear(cutoff.getFullYear() - 3);
+    const recent = (data.posts || [])
+      .filter((post) => {
+        const date = new Date(post.date);
+        return Number.isFinite(date.getTime()) && date >= cutoff;
+      })
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 8);
 
     recent.forEach((post) => {
       const date = new Date(post.date).toLocaleDateString("en-IN", {

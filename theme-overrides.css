@@ -150,6 +150,34 @@ body::before {
   height: 60px;
 }
 
+.cta-banner {
+  min-height: clamp(320px, 40vw, 380px);
+}
+
+.cta-banner .container {
+  max-width: min(1100px, 94vw);
+}
+
+.cta-banner h2 {
+  font-size: clamp(32px, 5vw, 56px);
+}
+
+.cta-banner p {
+  font-size: clamp(16px, 2.2vw, 20px);
+  max-width: 760px;
+  margin: 12px auto 20px;
+}
+
+.scroll-top {
+  background: var(--ncc-maroon);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.scroll-top:hover {
+  background: #a40f1a;
+}
+
 .btn-primary {
   background: var(--ncc-maroon);
   color: #fff;
