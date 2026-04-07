@@ -1,0 +1,80 @@
+:root {
+  --ncc-olive: #0b0f16;
+  --ncc-olive-dark: #05070b;
+  --ncc-olive-light: #1a2230;
+  --ncc-maroon: #d62828;
+  --ncc-gold: #3b82f6;
+  --ncc-gold-light: #93c5fd;
+  --ncc-cream: #0b0f16;
+  --ncc-white: #111827;
+  --ncc-text-dark: #e5e7eb;
+  --ncc-text-mid: #cbd5e1;
+  --ncc-text-light: #94a3b8;
+  --ncc-border: #1f2937;
+  --ncc-shadow: rgba(0, 0, 0, 0.45);
+}
+
+body {
+  background: var(--ncc-cream);
+  color: var(--ncc-text-dark);
+}
+
+.section--white {
+  background: var(--ncc-olive-light);
+}
+
+.section--cream {
+  background: var(--ncc-olive);
+}
+
+.section--dark {
+  color: var(--ncc-text-dark);
+}
+
+.card {
+  background: var(--ncc-white);
+  border-left-color: var(--ncc-maroon);
+}
+
+.btn-primary {
+  background: var(--ncc-maroon);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #b91c1c;
+}
+
+.btn-ghost {
+  border-color: var(--ncc-gold);
+  color: var(--ncc-gold);
+}
+
+.btn-ghost:hover {
+  background: var(--ncc-gold);
+  color: #0b0f16;
+}
+
+.tag--olive {
+  background: var(--ncc-maroon);
+  color: #fff;
+}
+
+.tag--outline {
+  border-color: var(--ncc-gold);
+  color: var(--ncc-gold);
+}
+
+.site-header {
+  background: rgba(6, 8, 12, 0.92);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--ncc-maroon);
+  border-bottom-color: var(--ncc-maroon);
+}
+
+.motto-watermark {
+  display: none !important;
+}
