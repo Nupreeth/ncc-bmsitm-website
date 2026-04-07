@@ -79,7 +79,70 @@ body::before {
 
 .hero::after,
 .page-hero::after {
-  background: rgba(27, 42, 65, 0.3);
+  background: linear-gradient(180deg, rgba(27, 42, 65, 0.45), rgba(27, 42, 65, 0.25));
+}
+
+.hero-content {
+  max-width: min(900px, 92vw);
+  gap: 14px;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  inset: -22px -28px;
+  background: rgba(15, 23, 42, 0.42);
+  border-radius: 26px;
+  backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+.hero h1 {
+  text-shadow: 0 10px 24px rgba(10, 15, 25, 0.35);
+}
+
+.hero-subline,
+.hero-unitline,
+.hero-tagline {
+  text-shadow: 0 6px 18px rgba(10, 15, 25, 0.3);
+}
+
+.hero-subline {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-unitline {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-tagline {
+  color: #f2d08a;
+}
+
+.hero-stats {
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-pill {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.stat-pill span {
+  color: #fff;
+}
+
+.brand-title {
+  font-weight: 700;
+}
+
+.nav-links a {
+  letter-spacing: 0.01em;
+}
+
+.logo-frame {
+  width: 60px;
+  height: 60px;
 }
 
 .btn-primary {
@@ -135,7 +198,14 @@ body::before {
 
 .logo-frame img[src*="bmsit-logo"] {
   mix-blend-mode: multiply;
-  filter: drop-shadow(0 1px 2px rgba(27, 42, 65, 0.35));
+  filter: drop-shadow(0 1px 2px rgba(27, 42, 65, 0.35)) saturate(1.08) contrast(1.08);
+}
+
+@media (max-width: 600px) {
+  .hero-content::before {
+    inset: -14px -12px;
+    border-radius: 20px;
+  }
 }
 
 .nav-toggle {
