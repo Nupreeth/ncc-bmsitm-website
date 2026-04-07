@@ -3,8 +3,8 @@
   --ncc-olive-dark: #1b2a41;
   --ncc-olive-light: #e6edf7;
   --ncc-maroon: #c1121f;
-  --ncc-gold: #1d4ed8;
-  --ncc-gold-light: #7aa6ff;
+  --ncc-gold: #d97706;
+  --ncc-gold-light: #f2c36b;
   --ncc-cream: #f3f1e7;
   --ncc-white: #ffffff;
   --ncc-text-dark: #1b2a41;
@@ -79,7 +79,7 @@ body::before {
 
 .hero::after,
 .page-hero::after {
-  background: linear-gradient(180deg, rgba(27, 42, 65, 0.45), rgba(27, 42, 65, 0.25));
+  background: linear-gradient(180deg, rgba(20, 24, 30, 0.48), rgba(20, 24, 30, 0.24));
 }
 
 .hero-content {
@@ -91,7 +91,8 @@ body::before {
   content: "";
   position: absolute;
   inset: -22px -28px;
-  background: rgba(15, 23, 42, 0.42);
+  background: rgba(20, 22, 26, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 26px;
   backdrop-filter: blur(6px);
   z-index: -1;
@@ -116,7 +117,7 @@ body::before {
 }
 
 .hero-tagline {
-  color: #f2d08a;
+  color: #f0c36b;
 }
 
 .hero-stats {
