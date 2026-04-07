@@ -1,40 +1,43 @@
 :root {
-  --ncc-olive: #f6f7fb;
-  --ncc-olive-dark: #0f172a;
-  --ncc-olive-light: #e8edf7;
+  --ncc-olive: #f3f1e7;
+  --ncc-olive-dark: #1b2a41;
+  --ncc-olive-light: #e6edf7;
   --ncc-maroon: #c1121f;
   --ncc-gold: #1d4ed8;
-  --ncc-gold-light: #60a5fa;
-  --ncc-cream: #f6f7fb;
+  --ncc-gold-light: #7aa6ff;
+  --ncc-cream: #f3f1e7;
   --ncc-white: #ffffff;
-  --ncc-text-dark: #0f172a;
+  --ncc-text-dark: #1b2a41;
   --ncc-text-mid: #475569;
-  --ncc-text-light: #64748b;
-  --ncc-border: #e2e8f0;
-  --ncc-shadow: rgba(15, 23, 42, 0.12);
+  --ncc-text-light: #5f6b7a;
+  --ncc-border: #d6dee8;
+  --ncc-shadow: rgba(27, 42, 65, 0.12);
   --primary: #1e3a8a;
-  --secondary: #334155;
+  --secondary: #455269;
   --accent: #c1121f;
-  --bg: #f6f7fb;
-  --bg-soft: #eef2ff;
-  --surface: rgba(255, 255, 255, 0.84);
-  --surface-strong: rgba(255, 255, 255, 0.95);
-  --surface-soft: rgba(15, 23, 42, 0.04);
-  --ink: #0f172a;
+  --bg: #f3f1e7;
+  --bg-soft: #eaf0fa;
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-strong: rgba(255, 255, 255, 0.97);
+  --surface-soft: rgba(27, 42, 65, 0.04);
+  --ink: #1b2a41;
   --ink-soft: #475569;
-  --navy: #1e3a8a;
+  --navy: #1b2a41;
   --navy-bright: #1d4ed8;
   --red: #c1121f;
   --blue: #1d4ed8;
-  --gold: #f59e0b;
-  --line: rgba(15, 23, 42, 0.12);
-  --line-strong: rgba(15, 23, 42, 0.2);
-  --shadow-soft: 0 30px 70px rgba(15, 23, 42, 0.12);
-  --shadow-card: 0 16px 40px rgba(15, 23, 42, 0.12);
+  --gold: #d97706;
+  --line: rgba(27, 42, 65, 0.12);
+  --line-strong: rgba(27, 42, 65, 0.2);
+  --shadow-soft: 0 30px 70px rgba(27, 42, 65, 0.12);
+  --shadow-card: 0 16px 40px rgba(27, 42, 65, 0.12);
 }
 
 body {
-  background: radial-gradient(circle at 20% -10%, rgba(29, 78, 216, 0.08), transparent 45%), #f6f7fb;
+  background:
+    radial-gradient(circle at 12% -10%, rgba(29, 78, 216, 0.12), transparent 50%),
+    radial-gradient(circle at 85% 10%, rgba(193, 18, 31, 0.08), transparent 45%),
+    #f3f1e7;
   color: var(--ncc-text-dark);
 }
 
@@ -43,15 +46,15 @@ body::before {
 }
 
 .section--white {
-  background: #ffffff;
+  background: #fbfaf5;
 }
 
 .section--cream {
-  background: #f6f7fb;
+  background: #f3f1e7;
 }
 
 .section--dark {
-  background: #0f172a;
+  background: #1b2a41;
   color: #f8fafc;
 }
 
@@ -76,7 +79,7 @@ body::before {
 
 .hero::after,
 .page-hero::after {
-  background: rgba(15, 23, 42, 0.35);
+  background: rgba(27, 42, 65, 0.3);
 }
 
 .btn-primary {
@@ -85,7 +88,7 @@ body::before {
 }
 
 .btn-primary:hover {
-  background: #9f0f1a;
+  background: #a40f1a;
 }
 
 .btn-ghost {
@@ -95,7 +98,7 @@ body::before {
 
 .btn-ghost:hover {
   background: var(--ncc-gold);
-  color: #0f172a;
+  color: #1b2a41;
 }
 
 .tag--olive {
@@ -130,6 +133,11 @@ body::before {
   border-bottom-color: var(--ncc-maroon);
 }
 
+.logo-frame img[src*="bmsit-logo"] {
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 1px 2px rgba(27, 42, 65, 0.35));
+}
+
 .nav-toggle {
   color: var(--ncc-maroon);
 }
@@ -144,12 +152,12 @@ body::before {
 
 @media (max-width: 768px) {
   .nav-links {
-    background: #ffffff;
-    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+    background: #fbfaf5;
+    box-shadow: 0 18px 36px rgba(27, 42, 65, 0.12);
   }
 
   .nav-links a {
-    border-bottom-color: rgba(15, 23, 42, 0.12);
+    border-bottom-color: rgba(27, 42, 65, 0.12);
   }
 }
 

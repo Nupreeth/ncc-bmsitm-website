@@ -1,14 +1,14 @@
 .site-header {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(251, 250, 245, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
 }
 
 .site-header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(29, 78, 216, 0.18);
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.14);
+  background: rgba(251, 250, 245, 0.97);
+  border-bottom: 1px solid rgba(29, 78, 216, 0.2);
+  box-shadow: 0 10px 26px rgba(27, 42, 65, 0.14);
 }
 
 .brand-logos {
@@ -21,8 +21,8 @@
   width: 56px;
   height: 56px;
   border-radius: 10px;
-  background: transparent;
-  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 1px rgba(27, 42, 65, 0.14);
 }
 
 .logo-frame img {
