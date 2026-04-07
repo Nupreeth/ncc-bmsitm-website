@@ -1,17 +1,17 @@
 :root {
   --ncc-olive: #0b0f16;
   --ncc-olive-dark: #05070b;
-  --ncc-olive-light: #1a2230;
-  --ncc-maroon: #d62828;
+  --ncc-olive-light: #111827;
+  --ncc-maroon: #ef4444;
   --ncc-gold: #3b82f6;
   --ncc-gold-light: #93c5fd;
   --ncc-cream: #0b0f16;
-  --ncc-white: #111827;
-  --ncc-text-dark: #e5e7eb;
+  --ncc-white: #f8fafc;
+  --ncc-text-dark: #f8fafc;
   --ncc-text-mid: #cbd5e1;
   --ncc-text-light: #94a3b8;
   --ncc-border: #1f2937;
-  --ncc-shadow: rgba(0, 0, 0, 0.45);
+  --ncc-shadow: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -20,20 +20,36 @@ body {
 }
 
 .section--white {
-  background: var(--ncc-olive-light);
+  background: #0f172a;
 }
 
 .section--cream {
-  background: var(--ncc-olive);
+  background: #0b0f16;
 }
 
 .section--dark {
+  background: #05070b;
   color: var(--ncc-text-dark);
 }
 
 .card {
-  background: var(--ncc-white);
+  background: #111827;
   border-left-color: var(--ncc-maroon);
+}
+
+.img-placeholder {
+  background: rgba(7, 10, 16, 0.86);
+  color: var(--ncc-gold-light);
+}
+
+.hero,
+.page-hero {
+  color: var(--ncc-white);
+}
+
+.hero::after,
+.page-hero::after {
+  background: rgba(7, 10, 16, 0.72);
 }
 
 .btn-primary {
@@ -42,7 +58,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: #b91c1c;
+  background: #dc2626;
 }
 
 .btn-ghost {
@@ -66,7 +82,7 @@ body {
 }
 
 .site-header {
-  background: rgba(6, 8, 12, 0.92);
+  background: rgba(7, 9, 14, 0.92);
 }
 
 .nav-links a:hover,
