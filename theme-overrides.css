@@ -569,8 +569,8 @@ body::before {
 }
 
 .hero-emblem {
-  width: clamp(90px, 14vw, 140px);
-  height: clamp(90px, 14vw, 140px);
+  width: clamp(110px, 16vw, 170px);
+  height: clamp(110px, 16vw, 170px);
   margin-inline: auto;
 }
 
