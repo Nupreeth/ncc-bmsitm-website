@@ -83,8 +83,8 @@ body::before {
 }
 
 .hero .hero-media img {
-  filter: blur(1.4px);
-  transform: scale(1.03);
+  filter: blur(0.8px);
+  transform: scale(1.02);
 }
 
 .hero-content {
@@ -95,10 +95,10 @@ body::before {
 .hero-content::before {
   content: "";
   position: absolute;
-  inset: -22px -28px;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 26px;
+  inset: -18px -22px;
+  background: rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
   z-index: -1;
 }
 
@@ -146,8 +146,14 @@ body::before {
 }
 
 .logo-frame {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
+  background: transparent;
+  box-shadow: 0 0 0 1px rgba(27, 42, 65, 0.16);
+}
+
+.logo-frame img {
+  background: transparent;
 }
 
 .cta-banner {
@@ -155,7 +161,7 @@ body::before {
 }
 
 .cta-banner .container {
-  max-width: min(1100px, 94vw);
+  max-width: min(1200px, 96vw);
 }
 
 .cta-banner h2 {
@@ -173,7 +179,7 @@ body::before {
 }
 
 .join-hero .hero-media img {
-  object-position: center 10%;
+  object-position: center 25%;
 }
 
 .scroll-top {
@@ -220,6 +226,10 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.resource-card * {
+  color: inherit;
 }
 
 .resource-card h3 {
@@ -303,8 +313,8 @@ body::before {
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
-  gap: 24px;
-  margin-bottom: 24px;
+  gap: 32px;
+  margin-bottom: 28px;
 }
 
 .history-header .btn {
@@ -438,6 +448,35 @@ body::before {
   letter-spacing: 0.01em;
 }
 
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.hero-emblem {
+  width: clamp(90px, 14vw, 140px);
+  height: clamp(90px, 14vw, 140px);
+}
+
+.hero-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ano-section .reveal:last-child {
+  display: grid;
+  gap: 12px;
+}
+
+.ano-section .btn {
+  margin-top: 8px;
+}
+
+.alumni-note {
+  margin-top: 18px;
+}
+
 .brand {
   min-width: 0;
 }
@@ -457,6 +496,10 @@ body::before {
 }
 
 @media (max-width: 600px) {
+  .nav-container {
+    flex-wrap: nowrap;
+  }
+
   .nav-links {
     position: absolute;
   }
@@ -466,6 +509,11 @@ body::before {
   .logo-frame {
     width: 44px;
     height: 44px;
+  }
+
+  .brand-divider,
+  .brand-text {
+    display: none;
   }
 
   .brand-title {

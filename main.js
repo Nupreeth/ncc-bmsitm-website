@@ -413,8 +413,13 @@ async function initActivitiesFeed() {
     if (!res.ok) throw new Error("Activities feed unavailable");
     const data = await res.json();
     const events = Array.isArray(data.events) ? data.events : [];
+    const cutoff = Date.now() - 365 * 24 * 60 * 60 * 1000;
+    const filteredEvents = events.filter((event) =>
+      typeof event.modified === "number" && event.modified >= cutoff
+    );
+    const recentEvents = filteredEvents.length ? filteredEvents : events;
 
-    if (!events.length) {
+    if (!recentEvents.length) {
       feed.innerHTML = "<p class=\"gallery-empty\">No activity posts found.</p>";
       return;
     }
@@ -423,7 +428,7 @@ async function initActivitiesFeed() {
 
     const placeholder = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 
-    events.forEach((event) => {
+    recentEvents.forEach((event) => {
       const images = Array.isArray(event.images) ? event.images : [];
       if (!images.length) return;
       const cover = images[0];
@@ -431,6 +436,8 @@ async function initActivitiesFeed() {
 
       const card = document.createElement("article");
       card.className = "activity-post reveal";
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
       card.innerHTML = `
         <div class="post-cover">
           <img data-src="${cover}" src="${placeholder}" alt="${event.event}" loading="lazy" decoding="async" />
@@ -448,6 +455,17 @@ async function initActivitiesFeed() {
           alt: `${event.event} photo ${index + 1}`
         }));
         window.Lightbox?.open(cover, event.event, list, 0);
+      });
+
+      card.addEventListener("keydown", (eventKey) => {
+        if (eventKey.key === "Enter" || eventKey.key === " ") {
+          eventKey.preventDefault();
+          const list = images.map((src, index) => ({
+            src,
+            alt: `${event.event} photo ${index + 1}`
+          }));
+          window.Lightbox?.open(cover, event.event, list, 0);
+        }
       });
 
       feed.appendChild(card);
