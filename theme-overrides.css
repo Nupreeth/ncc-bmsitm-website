@@ -213,6 +213,32 @@ body::before {
   object-fit: cover;
 }
 
+.resource-card {
+  background: var(--ncc-white);
+  color: var(--ncc-text-dark);
+  border-left-color: var(--ncc-maroon);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resource-card h3 {
+  color: var(--ncc-text-dark);
+}
+
+.resource-card ul {
+  color: var(--ncc-text-mid);
+}
+
+.resource-card a {
+  color: var(--ncc-gold);
+  font-weight: 600;
+}
+
+.resource-card a:hover {
+  color: var(--ncc-maroon);
+}
+
 .activities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
