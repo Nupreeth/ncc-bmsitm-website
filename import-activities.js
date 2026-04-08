@@ -44,6 +44,16 @@ eventFolders.forEach((folderName) => {
 
   if (!files.length) return;
 
+  let modified = 0;
+  files.forEach((file) => {
+    try {
+      const stat = fs.statSync(path.join(folderPath, file));
+      if (stat.mtimeMs > modified) modified = stat.mtimeMs;
+    } catch (err) {
+      // ignore stat errors
+    }
+  });
+
   const slug = slugify(folderName) || "event";
   const destFolder = path.join(destRoot, slug);
   fs.mkdirSync(destFolder, { recursive: true });
@@ -91,14 +101,15 @@ eventFolders.forEach((folderName) => {
   events.push({
     event: folderName,
     slug,
-    images
+    images,
+    modified
   });
 });
 
 const output = {
   last_updated: new Date().toISOString(),
   total_events: events.length,
-  events
+  events: events.sort((a, b) => a.modified - b.modified)
 };
 
 fs.writeFileSync(outputFile, JSON.stringify(output, null, 2));

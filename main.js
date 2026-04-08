@@ -421,6 +421,8 @@ async function initActivitiesFeed() {
 
     feed.innerHTML = "";
 
+    const placeholder = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+
     events.forEach((event) => {
       const images = Array.isArray(event.images) ? event.images : [];
       if (!images.length) return;
@@ -431,7 +433,7 @@ async function initActivitiesFeed() {
       card.className = "activity-post reveal";
       card.innerHTML = `
         <div class="post-cover">
-          <img src="${cover}" alt="${event.event}" loading="lazy" />
+          <img data-src="${cover}" src="${placeholder}" alt="${event.event}" loading="lazy" decoding="async" />
           <span class="post-count">${countLabel}</span>
         </div>
         <div class="post-body">
@@ -451,10 +453,39 @@ async function initActivitiesFeed() {
       feed.appendChild(card);
     });
 
+    initLazyImages(feed);
     window.ScrollReveal?.observe(feed.querySelectorAll(".activity-post"));
   } catch (err) {
     feed.innerHTML = "<p class=\"gallery-empty\">Unable to load activity posts.</p>";
   }
+}
+
+function initLazyImages(scope = document) {
+  const lazyImages = Array.from(scope.querySelectorAll("img[data-src]"));
+  if (!lazyImages.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    lazyImages.forEach((img) => {
+      img.src = img.dataset.src;
+      img.removeAttribute("data-src");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.removeAttribute("data-src");
+        obs.unobserve(img);
+      });
+    },
+    { rootMargin: "200px 0px" }
+  );
+
+  lazyImages.forEach((img) => observer.observe(img));
 }
 
 const forms = document.querySelectorAll("[data-form]");

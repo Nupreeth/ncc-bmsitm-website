@@ -227,6 +227,8 @@ body::before {
   display: grid;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 320px 320px;
 }
 
 .activity-post:hover {
@@ -403,8 +405,57 @@ body::before {
 
 .nav-container {
   padding: 12px 0;
+  gap: 16px;
 }
 
 .brand-title {
   letter-spacing: 0.01em;
+}
+
+.brand {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 10px 0;
+  }
+
+  .brand {
+    flex: 1 1 auto;
+  }
+
+  .nav-toggle {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    position: absolute;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo-frame {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-title {
+    font-size: 14px;
+  }
+
+  .brand-subtitle {
+    font-size: 10px;
+  }
+
+  .nav-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-toggle span {
+    width: 20px;
+  }
 }
