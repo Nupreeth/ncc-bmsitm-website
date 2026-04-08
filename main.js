@@ -404,6 +404,59 @@ async function initInstagramStrip() {
   }
 }
 
+async function initActivitiesFeed() {
+  const feed = document.querySelector("[data-activities-feed]");
+  if (!feed) return;
+
+  try {
+    const res = await fetch("/activities.json");
+    if (!res.ok) throw new Error("Activities feed unavailable");
+    const data = await res.json();
+    const events = Array.isArray(data.events) ? data.events : [];
+
+    if (!events.length) {
+      feed.innerHTML = "<p class=\"gallery-empty\">No activity posts found.</p>";
+      return;
+    }
+
+    feed.innerHTML = "";
+
+    events.forEach((event) => {
+      const images = Array.isArray(event.images) ? event.images : [];
+      if (!images.length) return;
+      const cover = images[0];
+      const countLabel = images.length === 1 ? "1 photo" : `${images.length} photos`;
+
+      const card = document.createElement("article");
+      card.className = "activity-post reveal";
+      card.innerHTML = `
+        <div class="post-cover">
+          <img src="${cover}" alt="${event.event}" loading="lazy" />
+          <span class="post-count">${countLabel}</span>
+        </div>
+        <div class="post-body">
+          <div class="post-title">${event.event}</div>
+          <div class="post-meta">Tap to view the full event set.</div>
+        </div>
+      `;
+
+      card.addEventListener("click", () => {
+        const list = images.map((src, index) => ({
+          src,
+          alt: `${event.event} photo ${index + 1}`
+        }));
+        window.Lightbox?.open(cover, event.event, list, 0);
+      });
+
+      feed.appendChild(card);
+    });
+
+    window.ScrollReveal?.observe(feed.querySelectorAll(".activity-post"));
+  } catch (err) {
+    feed.innerHTML = "<p class=\"gallery-empty\">Unable to load activity posts.</p>";
+  }
+}
+
 const forms = document.querySelectorAll("[data-form]");
 forms.forEach((form) => {
   form.addEventListener("submit", (event) => {
@@ -419,4 +472,5 @@ forms.forEach((form) => {
 document.addEventListener("DOMContentLoaded", () => {
   InstagramGallery.init();
   initInstagramStrip();
+  initActivitiesFeed();
 });

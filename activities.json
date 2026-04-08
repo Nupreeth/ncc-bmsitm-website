@@ -1,0 +1,541 @@
+{
+  "last_updated": "2026-04-08T09:13:57.278Z",
+  "total_events": 54,
+  "events": [
+    {
+      "event": "26-11 Event 2024",
+      "slug": "26-11-event-2024",
+      "images": [
+        "/assets/activities/26-11-event-2024/01.jpg",
+        "/assets/activities/26-11-event-2024/02.jpg",
+        "/assets/activities/26-11-event-2024/03.jpg",
+        "/assets/activities/26-11-event-2024/04.jpg",
+        "/assets/activities/26-11-event-2024/05.jpg",
+        "/assets/activities/26-11-event-2024/06.jpg"
+      ]
+    },
+    {
+      "event": "78th Raising Day of National Cadet Corps",
+      "slug": "78th-raising-day-of-national-cadet-corps",
+      "images": [
+        "/assets/activities/78th-raising-day-of-national-cadet-corps/01.jpg"
+      ]
+    },
+    {
+      "event": "79th Independence Day - 2025",
+      "slug": "79th-independence-day-2025",
+      "images": [
+        "/assets/activities/79th-independence-day-2025/01.jpg",
+        "/assets/activities/79th-independence-day-2025/02.jpg",
+        "/assets/activities/79th-independence-day-2025/03.jpg",
+        "/assets/activities/79th-independence-day-2025/04.jpg",
+        "/assets/activities/79th-independence-day-2025/05.jpg"
+      ]
+    },
+    {
+      "event": "Aero India 2025",
+      "slug": "aero-india-2025",
+      "images": [
+        "/assets/activities/aero-india-2025/01.jpg",
+        "/assets/activities/aero-india-2025/02.jpg",
+        "/assets/activities/aero-india-2025/03.jpg",
+        "/assets/activities/aero-india-2025/04.jpg"
+      ]
+    },
+    {
+      "event": "All India Thal Sainik Camp - 2024",
+      "slug": "all-india-thal-sainik-camp-2024",
+      "images": [
+        "/assets/activities/all-india-thal-sainik-camp-2024/01.jpg",
+        "/assets/activities/all-india-thal-sainik-camp-2024/02.jpg",
+        "/assets/activities/all-india-thal-sainik-camp-2024/03.jpg"
+      ]
+    },
+    {
+      "event": "All India Thal Sainik Camp 2025",
+      "slug": "all-india-thal-sainik-camp-2025",
+      "images": [
+        "/assets/activities/all-india-thal-sainik-camp-2025/01.jpg",
+        "/assets/activities/all-india-thal-sainik-camp-2025/02.jpg",
+        "/assets/activities/all-india-thal-sainik-camp-2025/03.jpg",
+        "/assets/activities/all-india-thal-sainik-camp-2025/04.jpg",
+        "/assets/activities/all-india-thal-sainik-camp-2025/05.jpg",
+        "/assets/activities/all-india-thal-sainik-camp-2025/06.jpg",
+        "/assets/activities/all-india-thal-sainik-camp-2025/07.jpg",
+        "/assets/activities/all-india-thal-sainik-camp-2025/08.jpg"
+      ]
+    },
+    {
+      "event": "Armed Forces Flag Day Event 2025",
+      "slug": "armed-forces-flag-day-event-2025",
+      "images": [
+        "/assets/activities/armed-forces-flag-day-event-2025/01.jpg",
+        "/assets/activities/armed-forces-flag-day-event-2025/02.jpg"
+      ]
+    },
+    {
+      "event": "Army Attachment Camp - 2024 (PCTC)",
+      "slug": "army-attachment-camp-2024-pctc",
+      "images": [
+        "/assets/activities/army-attachment-camp-2024-pctc/01.jpg",
+        "/assets/activities/army-attachment-camp-2024-pctc/02.jpg",
+        "/assets/activities/army-attachment-camp-2024-pctc/03.jpg"
+      ]
+    },
+    {
+      "event": "B Certificate Exam 2025",
+      "slug": "b-certificate-exam-2025",
+      "images": [
+        "/assets/activities/b-certificate-exam-2025/01.jpg",
+        "/assets/activities/b-certificate-exam-2025/02.jpg",
+        "/assets/activities/b-certificate-exam-2025/03.jpg",
+        "/assets/activities/b-certificate-exam-2025/04.jpg"
+      ]
+    },
+    {
+      "event": "B Certificate Exam 2026",
+      "slug": "b-certificate-exam-2026",
+      "images": [
+        "/assets/activities/b-certificate-exam-2026/01.webp",
+        "/assets/activities/b-certificate-exam-2026/02.webp",
+        "/assets/activities/b-certificate-exam-2026/03.webp",
+        "/assets/activities/b-certificate-exam-2026/04.webp"
+      ]
+    },
+    {
+      "event": "Batallion Achievers Felicitation - 2025",
+      "slug": "batallion-achievers-felicitation-2025",
+      "images": [
+        "/assets/activities/batallion-achievers-felicitation-2025/01.jpg",
+        "/assets/activities/batallion-achievers-felicitation-2025/02.jpg"
+      ]
+    },
+    {
+      "event": "Blood Donation Drive 2024",
+      "slug": "blood-donation-drive-2024",
+      "images": [
+        "/assets/activities/blood-donation-drive-2024/01.jpg",
+        "/assets/activities/blood-donation-drive-2024/02.jpg",
+        "/assets/activities/blood-donation-drive-2024/03.jpg",
+        "/assets/activities/blood-donation-drive-2024/04.jpg"
+      ]
+    },
+    {
+      "event": "C Certificate Exam 2025",
+      "slug": "c-certificate-exam-2025",
+      "images": [
+        "/assets/activities/c-certificate-exam-2025/01.jpg",
+        "/assets/activities/c-certificate-exam-2025/02.jpg",
+        "/assets/activities/c-certificate-exam-2025/03.jpg",
+        "/assets/activities/c-certificate-exam-2025/04.jpg",
+        "/assets/activities/c-certificate-exam-2025/05.jpg"
+      ]
+    },
+    {
+      "event": "C Certificate Exam 2026",
+      "slug": "c-certificate-exam-2026",
+      "images": [
+        "/assets/activities/c-certificate-exam-2026/01.jpg",
+        "/assets/activities/c-certificate-exam-2026/02.jpg",
+        "/assets/activities/c-certificate-exam-2026/03.jpg",
+        "/assets/activities/c-certificate-exam-2026/04.jpg"
+      ]
+    },
+    {
+      "event": "CATC - II 2025",
+      "slug": "catc-ii-2025",
+      "images": [
+        "/assets/activities/catc-ii-2025/01.jpg",
+        "/assets/activities/catc-ii-2025/02.jpg",
+        "/assets/activities/catc-ii-2025/03.jpg"
+      ]
+    },
+    {
+      "event": "Clothes Donation Drive 2025",
+      "slug": "clothes-donation-drive-2025",
+      "images": [
+        "/assets/activities/clothes-donation-drive-2025/01.jpg",
+        "/assets/activities/clothes-donation-drive-2025/02.jpg",
+        "/assets/activities/clothes-donation-drive-2025/03.jpg"
+      ]
+    },
+    {
+      "event": "CM Commendation 2026",
+      "slug": "cm-commendation-2026",
+      "images": [
+        "/assets/activities/cm-commendation-2026/01.jpg",
+        "/assets/activities/cm-commendation-2026/02.jpg",
+        "/assets/activities/cm-commendation-2026/03.jpg"
+      ]
+    },
+    {
+      "event": "COC Drone Training Camp 2025",
+      "slug": "coc-drone-training-camp-2025",
+      "images": [
+        "/assets/activities/coc-drone-training-camp-2025/01.jpg",
+        "/assets/activities/coc-drone-training-camp-2025/02.jpg",
+        "/assets/activities/coc-drone-training-camp-2025/03.jpg",
+        "/assets/activities/coc-drone-training-camp-2025/04.jpg",
+        "/assets/activities/coc-drone-training-camp-2025/05.jpg"
+      ]
+    },
+    {
+      "event": "Conference with GC and Prize Distribution",
+      "slug": "conference-with-gc-and-prize-distribution",
+      "images": [
+        "/assets/activities/conference-with-gc-and-prize-distribution/01.jpg",
+        "/assets/activities/conference-with-gc-and-prize-distribution/02.jpg"
+      ]
+    },
+    {
+      "event": "DDG Commendation 2025",
+      "slug": "ddg-commendation-2025",
+      "images": [
+        "/assets/activities/ddg-commendation-2025/01.jpg",
+        "/assets/activities/ddg-commendation-2025/02.jpg",
+        "/assets/activities/ddg-commendation-2025/03.jpg",
+        "/assets/activities/ddg-commendation-2025/04.jpg",
+        "/assets/activities/ddg-commendation-2025/05.jpg"
+      ]
+    },
+    {
+      "event": "DDG Commendation 2026",
+      "slug": "ddg-commendation-2026",
+      "images": [
+        "/assets/activities/ddg-commendation-2026/01.jpg",
+        "/assets/activities/ddg-commendation-2026/02.jpg",
+        "/assets/activities/ddg-commendation-2026/03.jpg"
+      ]
+    },
+    {
+      "event": "EBSB - 2025 (Indore)",
+      "slug": "ebsb-2025-indore",
+      "images": [
+        "/assets/activities/ebsb-2025-indore/01.jpg",
+        "/assets/activities/ebsb-2025-indore/02.jpg",
+        "/assets/activities/ebsb-2025-indore/03.jpg"
+      ]
+    },
+    {
+      "event": "ECHS Volunteering 2025",
+      "slug": "echs-volunteering-2025",
+      "images": [
+        "/assets/activities/echs-volunteering-2025/01.jpg"
+      ]
+    },
+    {
+      "event": "Enrollment 2024-25",
+      "slug": "enrollment-2024-25",
+      "images": [
+        "/assets/activities/enrollment-2024-25/01.jpg",
+        "/assets/activities/enrollment-2024-25/02.jpg",
+        "/assets/activities/enrollment-2024-25/03.jpg",
+        "/assets/activities/enrollment-2024-25/04.jpg"
+      ]
+    },
+    {
+      "event": "Farewell for Batches 2021-24 and 2022-25",
+      "slug": "farewell-for-batches-2021-24-and-2022-25",
+      "images": [
+        "/assets/activities/farewell-for-batches-2021-24-and-2022-25/01.jpg",
+        "/assets/activities/farewell-for-batches-2021-24-and-2022-25/02.jpg",
+        "/assets/activities/farewell-for-batches-2021-24-and-2022-25/03.jpg",
+        "/assets/activities/farewell-for-batches-2021-24-and-2022-25/04.jpg",
+        "/assets/activities/farewell-for-batches-2021-24-and-2022-25/05.jpg",
+        "/assets/activities/farewell-for-batches-2021-24-and-2022-25/06.jpg"
+      ]
+    },
+    {
+      "event": "GC Visit & Annual Review",
+      "slug": "gc-visit-and-annual-review",
+      "images": [
+        "/assets/activities/gc-visit-and-annual-review/01.webp",
+        "/assets/activities/gc-visit-and-annual-review/02.webp",
+        "/assets/activities/gc-visit-and-annual-review/03.webp",
+        "/assets/activities/gc-visit-and-annual-review/04.webp"
+      ]
+    },
+    {
+      "event": "Greenathon event - 2025",
+      "slug": "greenathon-event-2025",
+      "images": [
+        "/assets/activities/greenathon-event-2025/01.jpg",
+        "/assets/activities/greenathon-event-2025/02.jpg"
+      ]
+    },
+    {
+      "event": "Indian Air Force Day - Quiz Competition",
+      "slug": "indian-air-force-day-quiz-competition",
+      "images": [
+        "/assets/activities/indian-air-force-day-quiz-competition/01.jpg",
+        "/assets/activities/indian-air-force-day-quiz-competition/02.jpg",
+        "/assets/activities/indian-air-force-day-quiz-competition/03.jpg"
+      ]
+    },
+    {
+      "event": "International Yoga Day 2025",
+      "slug": "international-yoga-day-2025",
+      "images": [
+        "/assets/activities/international-yoga-day-2025/01.jpg",
+        "/assets/activities/international-yoga-day-2025/02.jpg",
+        "/assets/activities/international-yoga-day-2025/03.jpg",
+        "/assets/activities/international-yoga-day-2025/04.jpg",
+        "/assets/activities/international-yoga-day-2025/05.jpg"
+      ]
+    },
+    {
+      "event": "Kargil Vijay Diwas - 2024",
+      "slug": "kargil-vijay-diwas-2024",
+      "images": [
+        "/assets/activities/kargil-vijay-diwas-2024/01.jpg",
+        "/assets/activities/kargil-vijay-diwas-2024/02.jpg",
+        "/assets/activities/kargil-vijay-diwas-2024/03.jpg"
+      ]
+    },
+    {
+      "event": "Kargil Vijay Diwas 2025",
+      "slug": "kargil-vijay-diwas-2025",
+      "images": [
+        "/assets/activities/kargil-vijay-diwas-2025/01.jpg",
+        "/assets/activities/kargil-vijay-diwas-2025/02.jpg",
+        "/assets/activities/kargil-vijay-diwas-2025/03.jpg"
+      ]
+    },
+    {
+      "event": "National Space Day 2025",
+      "slug": "national-space-day-2025",
+      "images": [
+        "/assets/activities/national-space-day-2025/01.jpg",
+        "/assets/activities/national-space-day-2025/02.jpg",
+        "/assets/activities/national-space-day-2025/03.jpg",
+        "/assets/activities/national-space-day-2025/04.jpg",
+        "/assets/activities/national-space-day-2025/05.jpg",
+        "/assets/activities/national-space-day-2025/06.jpg"
+      ]
+    },
+    {
+      "event": "National Unity Day 2024",
+      "slug": "national-unity-day-2024",
+      "images": [
+        "/assets/activities/national-unity-day-2024/01.jpg",
+        "/assets/activities/national-unity-day-2024/02.jpg",
+        "/assets/activities/national-unity-day-2024/03.jpg"
+      ]
+    },
+    {
+      "event": "NCC Enrollment for the year 2025-26",
+      "slug": "ncc-enrollment-for-the-year-2025-26",
+      "images": [
+        "/assets/activities/ncc-enrollment-for-the-year-2025-26/01.jpg",
+        "/assets/activities/ncc-enrollment-for-the-year-2025-26/02.jpg",
+        "/assets/activities/ncc-enrollment-for-the-year-2025-26/03.jpg"
+      ]
+    },
+    {
+      "event": "Para Basic Camp 2025",
+      "slug": "para-basic-camp-2025",
+      "images": [
+        "/assets/activities/para-basic-camp-2025/01.jpg",
+        "/assets/activities/para-basic-camp-2025/02.jpg",
+        "/assets/activities/para-basic-camp-2025/03.jpg",
+        "/assets/activities/para-basic-camp-2025/04.jpg",
+        "/assets/activities/para-basic-camp-2025/05.jpg"
+      ]
+    },
+    {
+      "event": "Pre IGC and IGC RDC",
+      "slug": "pre-igc-and-igc-rdc",
+      "images": [
+        "/assets/activities/pre-igc-and-igc-rdc/01.jpg",
+        "/assets/activities/pre-igc-and-igc-rdc/02.jpg",
+        "/assets/activities/pre-igc-and-igc-rdc/03.jpg",
+        "/assets/activities/pre-igc-and-igc-rdc/04.jpg",
+        "/assets/activities/pre-igc-and-igc-rdc/05.jpg",
+        "/assets/activities/pre-igc-and-igc-rdc/06.jpg",
+        "/assets/activities/pre-igc-and-igc-rdc/07.jpg"
+      ]
+    },
+    {
+      "event": "Pre IGC and IGC TSC 2024",
+      "slug": "pre-igc-and-igc-tsc-2024",
+      "images": [
+        "/assets/activities/pre-igc-and-igc-tsc-2024/01.jpg",
+        "/assets/activities/pre-igc-and-igc-tsc-2024/02.jpg",
+        "/assets/activities/pre-igc-and-igc-tsc-2024/03.jpg",
+        "/assets/activities/pre-igc-and-igc-tsc-2024/04.jpg",
+        "/assets/activities/pre-igc-and-igc-tsc-2024/05.jpg",
+        "/assets/activities/pre-igc-and-igc-tsc-2024/06.jpg"
+      ]
+    },
+    {
+      "event": "Pre IGC RDC 2025",
+      "slug": "pre-igc-rdc-2025",
+      "images": [
+        "/assets/activities/pre-igc-rdc-2025/01.jpg",
+        "/assets/activities/pre-igc-rdc-2025/02.jpg",
+        "/assets/activities/pre-igc-rdc-2025/03.jpg"
+      ]
+    },
+    {
+      "event": "Pre RD Camp 2026",
+      "slug": "pre-rd-camp-2026",
+      "images": [
+        "/assets/activities/pre-rd-camp-2026/01.jpg",
+        "/assets/activities/pre-rd-camp-2026/02.jpg",
+        "/assets/activities/pre-rd-camp-2026/03.jpg",
+        "/assets/activities/pre-rd-camp-2026/04.jpg"
+      ]
+    },
+    {
+      "event": "Pre TSC and TSC IGC - 2025",
+      "slug": "pre-tsc-and-tsc-igc-2025",
+      "images": [
+        "/assets/activities/pre-tsc-and-tsc-igc-2025/01.jpg",
+        "/assets/activities/pre-tsc-and-tsc-igc-2025/02.jpg",
+        "/assets/activities/pre-tsc-and-tsc-igc-2025/03.jpg",
+        "/assets/activities/pre-tsc-and-tsc-igc-2025/04.jpg",
+        "/assets/activities/pre-tsc-and-tsc-igc-2025/05.jpg",
+        "/assets/activities/pre-tsc-and-tsc-igc-2025/06.jpg",
+        "/assets/activities/pre-tsc-and-tsc-igc-2025/07.jpg"
+      ]
+    },
+    {
+      "event": "Principal Appreciations",
+      "slug": "principal-appreciations",
+      "images": [
+        "/assets/activities/principal-appreciations/01.jpg",
+        "/assets/activities/principal-appreciations/02.jpg",
+        "/assets/activities/principal-appreciations/03.jpg",
+        "/assets/activities/principal-appreciations/04.jpg"
+      ]
+    },
+    {
+      "event": "Pulse Polio Drive 2026",
+      "slug": "pulse-polio-drive-2026",
+      "images": [
+        "/assets/activities/pulse-polio-drive-2026/01.jpg",
+        "/assets/activities/pulse-polio-drive-2026/02.jpg",
+        "/assets/activities/pulse-polio-drive-2026/03.jpg"
+      ]
+    },
+    {
+      "event": "Rank Pipping Ceremony 2024",
+      "slug": "rank-pipping-ceremony-2024",
+      "images": [
+        "/assets/activities/rank-pipping-ceremony-2024/01.jpg"
+      ]
+    },
+    {
+      "event": "Rank Pipping Ceremony 2025",
+      "slug": "rank-pipping-ceremony-2025",
+      "images": [
+        "/assets/activities/rank-pipping-ceremony-2025/01.jpg",
+        "/assets/activities/rank-pipping-ceremony-2025/02.jpg",
+        "/assets/activities/rank-pipping-ceremony-2025/03.jpg"
+      ]
+    },
+    {
+      "event": "RDC 2025 - Culturals",
+      "slug": "rdc-2025-culturals",
+      "images": [
+        "/assets/activities/rdc-2025-culturals/01.jpg",
+        "/assets/activities/rdc-2025-culturals/02.jpg",
+        "/assets/activities/rdc-2025-culturals/03.jpg",
+        "/assets/activities/rdc-2025-culturals/04.jpg",
+        "/assets/activities/rdc-2025-culturals/05.jpg",
+        "/assets/activities/rdc-2025-culturals/06.jpg"
+      ]
+    },
+    {
+      "event": "RDC 2025 - Idea and Innovation Competition",
+      "slug": "rdc-2025-idea-and-innovation-competition",
+      "images": [
+        "/assets/activities/rdc-2025-idea-and-innovation-competition/01.jpg",
+        "/assets/activities/rdc-2025-idea-and-innovation-competition/02.jpg",
+        "/assets/activities/rdc-2025-idea-and-innovation-competition/03.jpg",
+        "/assets/activities/rdc-2025-idea-and-innovation-competition/04.jpg",
+        "/assets/activities/rdc-2025-idea-and-innovation-competition/05.jpg",
+        "/assets/activities/rdc-2025-idea-and-innovation-competition/06.jpg"
+      ]
+    },
+    {
+      "event": "Republic Day Parade 2025",
+      "slug": "republic-day-parade-2025",
+      "images": [
+        "/assets/activities/republic-day-parade-2025/01.jpg",
+        "/assets/activities/republic-day-parade-2025/02.jpg",
+        "/assets/activities/republic-day-parade-2025/03.jpg",
+        "/assets/activities/republic-day-parade-2025/04.jpg",
+        "/assets/activities/republic-day-parade-2025/05.jpg",
+        "/assets/activities/republic-day-parade-2025/06.jpg"
+      ]
+    },
+    {
+      "event": "Republic Day Parade 2026",
+      "slug": "republic-day-parade-2026",
+      "images": [
+        "/assets/activities/republic-day-parade-2026/01.jpg",
+        "/assets/activities/republic-day-parade-2026/02.jpg",
+        "/assets/activities/republic-day-parade-2026/03.jpg",
+        "/assets/activities/republic-day-parade-2026/04.jpg",
+        "/assets/activities/republic-day-parade-2026/05.jpg",
+        "/assets/activities/republic-day-parade-2026/06.jpg",
+        "/assets/activities/republic-day-parade-2026/07.jpg",
+        "/assets/activities/republic-day-parade-2026/08.jpg"
+      ]
+    },
+    {
+      "event": "SNIC, Wokha - 2024",
+      "slug": "snic-wokha-2024",
+      "images": [
+        "/assets/activities/snic-wokha-2024/01.jpg",
+        "/assets/activities/snic-wokha-2024/02.jpg",
+        "/assets/activities/snic-wokha-2024/03.jpg",
+        "/assets/activities/snic-wokha-2024/04.jpg",
+        "/assets/activities/snic-wokha-2024/05.jpg"
+      ]
+    },
+    {
+      "event": "Statue Cleaning 2026",
+      "slug": "statue-cleaning-2026",
+      "images": [
+        "/assets/activities/statue-cleaning-2026/01.jpg",
+        "/assets/activities/statue-cleaning-2026/02.jpg",
+        "/assets/activities/statue-cleaning-2026/03.jpg"
+      ]
+    },
+    {
+      "event": "Swacch Bharat 2025",
+      "slug": "swacch-bharat-2025",
+      "images": [
+        "/assets/activities/swacch-bharat-2025/01.jpg"
+      ]
+    },
+    {
+      "event": "Traffic Awareness Drive",
+      "slug": "traffic-awareness-drive",
+      "images": [
+        "/assets/activities/traffic-awareness-drive/01.jpg",
+        "/assets/activities/traffic-awareness-drive/02.jpg",
+        "/assets/activities/traffic-awareness-drive/03.jpg"
+      ]
+    },
+    {
+      "event": "Trek to Akkayama 2026",
+      "slug": "trek-to-akkayama-2026",
+      "images": [
+        "/assets/activities/trek-to-akkayama-2026/01.jpg",
+        "/assets/activities/trek-to-akkayama-2026/02.jpg"
+      ]
+    },
+    {
+      "event": "Tug Of War - 150 years of vande Mataram",
+      "slug": "tug-of-war-150-years-of-vande-mataram",
+      "images": [
+        "/assets/activities/tug-of-war-150-years-of-vande-mataram/01.jpg",
+        "/assets/activities/tug-of-war-150-years-of-vande-mataram/02.jpg",
+        "/assets/activities/tug-of-war-150-years-of-vande-mataram/03.jpg"
+      ]
+    }
+  ]
+}
