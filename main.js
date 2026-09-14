@@ -545,7 +545,33 @@ document.querySelectorAll("[data-aitsc-year]").forEach((card) => {
         window.Lightbox.open(imageList[0].src, `AITSC ${year}`, imageList, 0);
       }
     } catch (err) {
-      console.error("Failed to parse card images:", err);
+      console.error("Failed to parse AITSC card images:", err);
+    }
+  });
+});
+
+// Dynamic Lightbox Handler for RDC Cards
+document.querySelectorAll("[data-rdc-year]").forEach((card) => {
+  card.addEventListener("click", () => {
+    const rawImages = card.dataset.images;
+    const year = card.dataset.rdcYear;
+
+    if (!rawImages) return;
+
+    try {
+      const parsedImages = JSON.parse(rawImages);
+      const imageList = parsedImages.map((item) => {
+        if (typeof item === "string") {
+          return { src: item, alt: `RDC ${year} photo` };
+        }
+        return { src: item.src, alt: item.alt || `RDC ${year} photo` };
+      });
+
+      if (imageList.length > 0) {
+        window.Lightbox.open(imageList[0].src, `RDC ${year}`, imageList, 0);
+      }
+    } catch (err) {
+      console.error("Failed to parse RDC card images:", err);
     }
   });
 });
