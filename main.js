@@ -549,6 +549,8 @@ document.addEventListener("click", (e) => {
   } catch (err) {
     console.error("Failed to parse card images JSON:", err);
   }
+});
+
 // Awards Name Lightbox Click Handler
 document.addEventListener("click", (e) => {
   const cadet = e.target.closest(".award-cadet");
