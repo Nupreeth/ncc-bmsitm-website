@@ -1,259 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Awards | NCC BMSITM</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <meta name="description" content="Commendations, medallions, and awards earned by NCC BMSITM cadets and officers." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/navbar-overrides.css" />
-  <link rel="stylesheet" href="/navbar-polish.css" />
-  <link rel="stylesheet" href="/theme-overrides.css" />
-  <style>
-    /* Styling clickable cadet items */
-    .award-cadet {
-      cursor: pointer;
-      color: var(--ncc-gold, #c5a059);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, opacity 0.2s ease;
-    }
-    .award-cadet:hover {
-      color: #9e7a37;
-      opacity: 0.9;
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-container">
-      <a class="brand" href="/index.html">
-        <span class="brand-logos">
-          <picture class="img-frame logo-frame">
-            <img src="/assets/logos/ncc-logo.png" alt="NCC Emblem" data-placeholder="true" loading="lazy" />
-            <div class="img-placeholder">NCC Logo</div>
-          </picture>
-          <picture class="img-frame logo-frame">
-            <img src="/assets/logos/bmsit-logo.png" alt="BMSIT Logo" data-placeholder="true" loading="lazy" />
-            <div class="img-placeholder">BMSIT Logo</div>
-          </picture>
-        </span>
-        <span class="brand-divider"></span>
-        <span class="brand-text">
-          <span class="brand-title">NCC BMSITM</span>
-          <span class="brand-subtitle">39/17 NCC Company</span>
-        </span>
-      </a>
+<section id="ddg-commendations" class="section section--cream">
+  <div class="container">
+    <h2 class="heading-serif">Commendations &amp; Awards</h2>
+    <div class="rule" style="margin-left: 0;"></div>
+    <div class="event-grid">
+      <!-- DG NCC Medallion -->
+      <article class="card reveal">
+        <h3>DG NCC Medallion</h3>
+        <ul class="list">
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/rishab.jpg" 
+                  data-title="CSUO Rishab S Rokhade (2022) - DG NCC Medallion">
+              CSUO Rishab S Rokhade (2022)
+            </span>
+          </li>
+        </ul>
+      </article>
 
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="primary-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <!-- DDG Commendation -->
+      <article class="card reveal">
+        <h3>DDG Commendation</h3>
+        <ul class="list">
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/rani_commendation.png" 
+                  data-title="Lt. Rani Mysore Srinivas (2022) - DDG Commendation">
+              Lt. Rani Mysore Srinivas (2022)
+            </span>
+          </li>
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/rishab_c.jpg" 
+                  data-title="CSUO Rishab S Rokhade (2022) - DDG Commendation">
+              CSUO Rishab S Rokhade (2022)
+            </span>
+          </li>
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/pooja_c.jpg" 
+                  data-title="CSUO Pooja P (2023) - DDG Commendation">
+              CSUO Pooja P (2023)
+            </span>
+          </li>
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/prajwal_c.png" 
+                  data-title="CSUO Varadaraj Prabhu G G (2025) - DDG Commendation">
+              CSUO Varadaraj Prabhu G G (2025)
+            </span>
+          </li>
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/sagar_c.png" 
+                  data-title="BJUO Sagar B S (2025) - DDG Commendation">
+              BJUO Sagar B S (2025)
+            </span>
+          </li>
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/prajwal_c.png" 
+                  data-title="BJUO Prajwal V Dev (2025) - DDG Commendation">
+              BJUO Prajwal V Dev (2025)
+            </span>
+          </li>
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/ananya.jpg" 
+                  data-title="BQMS Ananya Gupta (2026) - DDG Commendation">
+              BQMS Ananya Gupta (2026)
+            </span>
+          </li>
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/ananya.jpg" 
+                  data-title="CPL Angom Lamyanba Meitei (2026) - DDG Commendation">
+              CPL Angom Lamyanba Meitei (2026)
+            </span>
+          </li>
+        </ul>
+      </article>
 
-      <nav id="primary-nav" class="nav-links">
-        <button class="nav-close" type="button" aria-label="Close navigation">X</button>
-        <a href="/index.html">Home</a>
-        <a href="/achievements.html">Achievements</a>
-        <a class="active" href="/awards.html">Awards</a>
-        <a href="/timeline.html">Timeline</a>
-        <a href="/activities.html">Activities</a>
-        <a href="/join.html">Join NCC</a>
-        <a class="nav-link-two-line" href="/alumni.html">Alumni in<br>Forces</a>
-        <a href="/cadets-corner.html">Cadet's Corner</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
+      <!-- Chief Minister's Commendation -->
+      <article class="card reveal">
+        <h3>Chief Minister's Commendation</h3>
+        <ul class="list">
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/deeksha.jpg" 
+                  data-title="CSUO Deeksha Sethi (2021) - CM Commendation">
+              CSUO Deeksha Sethi (2021)
+            </span>
+          </li>
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/rani.jpg" 
+                  data-title="Lt. Rani M. S. (2026) - CM Commendation">
+              Lt. Rani M. S. (2026)
+            </span>
+          </li>
+          <li>
+            <span class="award-cadet" 
+                  data-image="/assets/images/varsha.jpg" 
+                  data-title="JUO Varsha B (2026) - CM Commendation">
+              JUO Varsha B (2026)
+            </span>
+          </li>
+        </ul>
+      </article>
     </div>
-  </header>
-
-  <main>
-    <section class="page-hero">
-      <picture class="img-frame hero-media">
-        <img src="/assets/images/achievements-hero.jpg" alt="Cadets at an award ceremony" data-placeholder="true" loading="lazy" />
-        <div class="img-placeholder">AWARDS_HERO_IMAGE_PLACEHOLDER</div>
-      </picture>
-      <div class="container">
-        <p class="breadcrumb">Home &gt; Awards</p>
-        <h1>Awards</h1>
-        <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.75); text-align: left; margin: 12px 0 0;">Commendations &middot; Medallions &middot; Recognition</p>
-      </div>
-    </section>
-
-    <section id="ddg-commendations" class="section section--cream">
-      <div class="container">
-        <h2 class="heading-serif">Commendations &amp; Awards</h2>
-        <div class="rule" style="margin-left: 0;"></div>
-        <div class="event-grid">
-          <!-- DG NCC Medallion -->
-          <article class="card reveal">
-            <h3>DG NCC Medallion</h3>
-            <ul class="list">
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/rishab.jpg" 
-                      data-title="CSUO Rishab S Rokhade (2022) - DG NCC Medallion">
-                  CSUO Rishab S Rokhade (2022)
-                </span>
-              </li>
-            </ul>
-          </article>
-
-          <!-- DDG Commendation -->
-          <article class="card reveal">
-            <h3>DDG Commendation</h3>
-            <ul class="list">
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/rani.jpg" 
-                      data-title="Lt. Rani Mysore Srinivas (2022) - DDG Commendation">
-                  Lt. Rani Mysore Srinivas (2022)
-                </span>
-              </li>
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/rishab.jpg" 
-                      data-title="CSUO Rishab S Rokhade (2022) - DDG Commendation">
-                  CSUO Rishab S Rokhade (2022)
-                </span>
-              </li>
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/2.jpg" 
-                      data-title="CSUO Pooja P (2023) - DDG Commendation">
-                  CSUO Pooja P (2023)
-                </span>
-              </li>
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/3.jpg" 
-                      data-title="CSUO Varadaraj Prabhu G G (2025) - DDG Commendation">
-                  CSUO Varadaraj Prabhu G G (2025)
-                </span>
-              </li>
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/sagar.png" 
-                      data-title="BJUO Sagar B S (2025) - DDG Commendation">
-                  BJUO Sagar B S (2025)
-                </span>
-              </li>
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/prajwal.png" 
-                      data-title="BJUO Prajwal V Dev (2025) - DDG Commendation">
-                  BJUO Prajwal V Dev (2025)
-                </span>
-              </li>
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/ananya.jpg" 
-                      data-title="BQMS Ananya Gupta (2026) - DDG Commendation">
-                  BQMS Ananya Gupta (2026)
-                </span>
-              </li>
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/angom.jpg" 
-                      data-title="CPL Angom Lamyanba Meitei (2026) - DDG Commendation">
-                  CPL Angom Lamyanba Meitei (2026)
-                </span>
-              </li>
-            </ul>
-          </article>
-
-          <!-- Chief Minister's Commendation -->
-          <article class="card reveal">
-            <h3>Chief Minister's Commendation</h3>
-            <ul class="list">
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/deeksha.png" 
-                      data-title="CSUO Deeksha Sethi (2021) - CM Commendation">
-                  CSUO Deeksha Sethi (2021)
-                </span>
-              </li>
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/rani.jpg" 
-                      data-title="Lt. Rani M. S. (2026) - CM Commendation">
-                  Lt. Rani M. S. (2026)
-                </span>
-              </li>
-              <li>
-                <span class="award-cadet" 
-                      data-image="/assets/images/8.jpg" 
-                      data-title="JUO Varsha B (2026) - CM Commendation">
-                  JUO Varsha B (2026)
-                </span>
-              </li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand" style="color: var(--ncc-white);">
-          <span class="brand-logos">
-            <picture class="img-frame logo-frame">
-              <img src="/assets/logos/ncc-logo.png" alt="NCC Emblem" data-placeholder="true" loading="lazy" />
-              <div class="img-placeholder">NCC Logo</div>
-            </picture>
-            <picture class="img-frame logo-frame">
-              <img src="/assets/logos/bmsit-logo.png" alt="BMSIT Logo" data-placeholder="true" loading="lazy" />
-              <div class="img-placeholder">BMSIT Logo</div>
-            </picture>
-          </span>
-          <span class="brand-text">
-            <span class="brand-title">NCC BMSITM</span>
-            <span class="brand-subtitle">Unity and Discipline</span>
-          </span>
-        </div>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <div class="footer-links">
-          <a href="/index.html">Home</a>
-          <a href="/achievements.html">Achievements</a>
-          <a href="/awards.html">Awards</a>
-          <a href="/timeline.html">Timeline</a>
-          <a href="/activities.html">Activities</a>
-          <a href="/join.html">Join NCC</a>
-          <a href="/alumni.html">Alumni</a>
-          <a href="/cadets-corner.html">Cadet's Corner</a>
-          <a href="/contact.html">Contact</a>
-        </div>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>ncc@bmsit.in</p>
-        <p>nccbmsit@gmail.com</p>
-        <p>BMS Institute of Technology and Management, Avalahalli, Yelahanka, Bengaluru 560119</p>
-        <p><a href="https://www.instagram.com/nccbmsit/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-        <p><a href="https://linktr.ee/nccbmsit" target="_blank" rel="noopener noreferrer">Linktree</a></p>
-        <p><a href="https://www.linkedin.com/company/ncc-bmsitm16/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">&copy; 2025-26 NCC BMSITM &middot; 39/17 NCC Company &middot; 39 Karnataka Battalion</div>
-  </footer>
-
-  <button class="scroll-top" type="button" aria-label="Scroll to top">&uarr;</button>
-
-  <!-- Lightbox Container -->
-  <div class="lightbox">
-    <button class="lightbox-close" type="button" aria-label="Close gallery">&times;</button>
-    <button class="lightbox-prev" type="button" aria-label="Previous photo">&larr;</button>
-    <img class="lightbox-image" src="" alt="" />
-    <button class="lightbox-next" type="button" aria-label="Next photo">&rarr;</button>
   </div>
-
-  <script defer src="/main.js"></script>
-</body>
-</html>
+</section>
