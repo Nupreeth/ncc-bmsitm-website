@@ -524,54 +524,29 @@ document.addEventListener("DOMContentLoaded", () => {
   initActivitiesFeed();
 });
 
-// Dynamic Lightbox Handler for AITSC Cards
-document.querySelectorAll("[data-aitsc-year]").forEach((card) => {
-  card.addEventListener("click", () => {
-    const rawImages = card.dataset.images;
-    const year = card.dataset.aitscYear;
+// Universal Lightbox Card Click Handler (Supports AITSC, RDC, & all dataset cards)
+document.addEventListener("click", (e) => {
+  const card = e.target.closest("[data-images]");
+  if (!card) return;
 
-    if (!rawImages) return;
+  const rawImages = card.dataset.images;
+  const title = card.dataset.title || card.querySelector("h3")?.innerText || "Gallery";
 
-    try {
-      const parsedImages = JSON.parse(rawImages);
-      const imageList = parsedImages.map((item) => {
-        if (typeof item === "string") {
-          return { src: item, alt: `AITSC ${year} photo` };
-        }
-        return { src: item.src, alt: item.alt || `AITSC ${year} photo` };
-      });
+  if (!rawImages) return;
 
-      if (imageList.length > 0) {
-        window.Lightbox.open(imageList[0].src, `AITSC ${year}`, imageList, 0);
+  try {
+    const parsedImages = JSON.parse(rawImages);
+    const imageList = parsedImages.map((item) => {
+      if (typeof item === "string") {
+        return { src: item, alt: title };
       }
-    } catch (err) {
-      console.error("Failed to parse AITSC card images:", err);
+      return { src: item.src, alt: item.alt || title };
+    });
+
+    if (imageList.length > 0) {
+      window.Lightbox.open(imageList[0].src, title, imageList, 0);
     }
-  });
-});
-
-// Dynamic Lightbox Handler for RDC Cards
-document.querySelectorAll("[data-rdc-year]").forEach((card) => {
-  card.addEventListener("click", () => {
-    const rawImages = card.dataset.images;
-    const year = card.dataset.rdcYear;
-
-    if (!rawImages) return;
-
-    try {
-      const parsedImages = JSON.parse(rawImages);
-      const imageList = parsedImages.map((item) => {
-        if (typeof item === "string") {
-          return { src: item, alt: `RDC ${year} photo` };
-        }
-        return { src: item.src, alt: item.alt || `RDC ${year} photo` };
-      });
-
-      if (imageList.length > 0) {
-        window.Lightbox.open(imageList[0].src, `RDC ${year}`, imageList, 0);
-      }
-    } catch (err) {
-      console.error("Failed to parse RDC card images:", err);
-    }
-  });
+  } catch (err) {
+    console.error("Failed to parse card images JSON:", err);
+  }
 });
