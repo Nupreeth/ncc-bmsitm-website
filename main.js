@@ -524,24 +524,28 @@ document.addEventListener("DOMContentLoaded", () => {
   initActivitiesFeed();
 });
 
-const aitscGalleries = {
-  "2025": [
-    { src: "/assets/aitsc-gallery/2025/p1.png", alt: "AITSC 2025 photo 1" }
-  ],
-  "2024": [
-    { src: "/assets/aitsc-gallery/2024/p2.png", alt: "AITSC 2024 photo 1" }
-  ],
-  "2023": [
-    { src: "/assets/aitsc-gallery/2023/p3.png", alt: "AITSC 2023 photo 1" }
-  ]
-};
-
+// Dynamic Lightbox Handler for AITSC Cards
 document.querySelectorAll("[data-aitsc-year]").forEach((card) => {
   card.addEventListener("click", () => {
+    const rawImages = card.dataset.images;
     const year = card.dataset.aitscYear;
-    const images = aitscGalleries[year];
-    if (images && images.length) {
-      window.Lightbox.open(null, `AITSC ${year}`, images, 0);
+
+    if (!rawImages) return;
+
+    try {
+      const parsedImages = JSON.parse(rawImages);
+      const imageList = parsedImages.map((item) => {
+        if (typeof item === "string") {
+          return { src: item, alt: `AITSC ${year} photo` };
+        }
+        return { src: item.src, alt: item.alt || `AITSC ${year} photo` };
+      });
+
+      if (imageList.length > 0) {
+        window.Lightbox.open(imageList[0].src, `AITSC ${year}`, imageList, 0);
+      }
+    } catch (err) {
+      console.error("Failed to parse card images:", err);
     }
   });
 });
