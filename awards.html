@@ -3,42 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commendations &amp; Awards</title>
+  <title>Commendations &amp; Awards | NCC BMSIT&amp;M</title>
   <link rel="stylesheet" href="/css/style.css">
   <style>
-    /* Lightbox image sizing */
+    /* Lightbox modal & arrow fixes to match your site's style */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox.active {
+      display: flex;
+    }
     .lightbox-image {
       max-width: 600px;
       max-height: 80vh;
       width: auto;
       height: auto;
       object-fit: contain;
+      border-radius: 4px;
     }
-    /* Fix lightbox arrow visibility with high contrast */
+    .lightbox-close,
     .lightbox-prev,
     .lightbox-next {
-      background: #ffffff !important;
-      color: #000000 !important;
-      border: none !important;
-      font-size: 24px !important;
-      width: 44px !important;
-      height: 44px !important;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.15) !important;
+      color: #ffffff !important;
+      border: 2px solid rgba(255, 255, 255, 0.8) !important;
+      font-size: 22px !important;
+      width: 45px !important;
+      height: 45px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       border-radius: 50% !important;
       cursor: pointer;
-      z-index: 10002;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 10000;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: rgba(255, 255, 255, 0.3) !important;
+    }
+    .lightbox-close {
+      top: 20px;
+      right: 25px;
+    }
+    .lightbox-prev {
+      left: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .lightbox-next {
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   </style>
 </head>
 <body>
 
-  <!-- Site Header / Navigation -->
+  <!-- Site Header / Navigation (Exact match to index.html) -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="logo">NCC BMSIT&amp;M</a>
+      <a href="index.html" class="logo">
+        <span class="logo-mark">
+          <img src="/assets/images/college-logo.png" alt="College Logo" onerror="this.style.display='none'">
+        </span>
+        <span class="logo-mark">
+          <img src="/assets/images/ncc-logo.png" alt="NCC Logo" onerror="this.style.display='none'">
+        </span>
+        <span class="logo-text">
+          <span class="brand-title">NCC BMSIT&amp;M</span>
+          <span class="brand-subtitle">39/17 NCC Company</span>
+        </span>
+      </a>
       <button class="nav-toggle" aria-label="Open navigation">
         <span></span>
         <span></span>
@@ -48,8 +95,14 @@
         <button class="nav-close" aria-label="Close navigation">&times;</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
           <li><a href="awards.html" class="active">Awards</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="timeline.html">Timeline</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="join-ncc.html">Join NCC</a></li>
+          <li><a href="alumni-forces.html">Alumni in Forces</a></li>
+          <li><a href="cadets-corner.html">Cadet's Corner</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -72,7 +125,7 @@
             <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
-          <!-- DDG Commendation (Using rishab_c.jpeg instead of rishab.jpeg) -->
+          <!-- DDG Commendation (Using rishab_c.jpeg) -->
           <article class="card reveal award-card" data-images='["assets/images/rani_commendation.png", "assets/images/rishab_c.jpeg", "assets/images/pooja_c.jpeg", "assets/images/prajwal_c.png", "assets/images/sagar_c.png", "assets/images/ananya.jpeg"]'>
             <h3>DDG Commendation</h3>
             <ul class="list">
@@ -88,7 +141,7 @@
             <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
-          <!-- Chief Minister's Commendation -->
+          <!-- Chief Minister's Commendation (2 photos) -->
           <article class="card reveal award-card" data-images='["assets/images/rani.jpeg", "assets/images/varsha.jpeg"]'>
             <h3>Chief Minister's Commendation</h3>
             <ul class="list">
