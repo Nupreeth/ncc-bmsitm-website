@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Commendations &amp; Awards | NCC BMSIT&amp;M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/navbar-overrides.css">
+  <link rel="stylesheet" href="/navbar-polish.css">
+  <link rel="stylesheet" href="/theme-overrides.css?v=2">
   <style>
     /* Lightbox modal & arrow fixes to match your site's style */
     .lightbox {
@@ -19,7 +25,7 @@
       justify-content: center;
       align-items: center;
     }
-    .lightbox.active {
+    .lightbox.active, .lightbox.open {
       display: flex;
     }
     .lightbox-image {
@@ -71,39 +77,44 @@
 </head>
 <body>
 
-  <!-- Site Header / Navigation (Exact match to index.html with both logos) -->
+  <!-- Site Header / Navigation (Unified with index.html) -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <span class="logo-mark">
-          <img src="/assets/images/college-logo.png" alt="College Logo" onerror="this.style.display='none'">
+      <a class="brand" href="/index.html">
+        <span class="brand-logos">
+          <picture class="img-frame logo-frame">
+            <img src="/assets/logos/ncc-logo.png" alt="NCC Emblem" data-placeholder="true" loading="lazy">
+            <div class="img-placeholder">NCC Logo</div>
+          </picture>
+          <picture class="img-frame logo-frame">
+            <img src="/assets/logos/bmsit-logo.png" alt="BMSIT Logo" data-placeholder="true" loading="lazy">
+            <div class="img-placeholder">BMSIT Logo</div>
+          </picture>
         </span>
-        <span class="logo-mark">
-          <img src="/assets/images/ncc-logo.png" alt="NCC Logo" onerror="this.style.display='none'">
-        </span>
-        <span class="logo-text">
-          <span class="brand-title">NCC BMSIT&amp;M</span>
+        <span class="brand-divider"></span>
+        <span class="brand-text">
+          <span class="brand-title">NCC BMSITM</span>
           <span class="brand-subtitle">39/17 NCC Company</span>
         </span>
       </a>
-      <button class="nav-toggle" aria-label="Open navigation">
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="primary-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav class="nav-menu">
-        <button class="nav-close" aria-label="Close navigation">&times;</button>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="achievements.html">Achievements</a></li>
-          <li><a href="awards.html" class="active">Awards</a></li>
-          <li><a href="timeline.html">Timeline</a></li>
-          <li><a href="activities.html">Activities</a></li>
-          <li><a href="join-ncc.html">Join NCC</a></li>
-          <li><a href="alumni-forces.html">Alumni in Forces</a></li>
-          <li><a href="cadets-corner.html">Cadet's Corner</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+
+      <nav id="primary-nav" class="nav-links">
+        <button class="nav-close" type="button" aria-label="Close navigation">X</button>
+        <a href="/index.html">Home</a>
+        <a href="/achievements.html">Achievements</a>
+        <a class="active" href="/awards.html">Awards</a>
+        <a href="/timeline.html">Timeline</a>
+        <a href="/activities.html">Activities</a>
+        <a href="/join.html">Join NCC</a>
+        <a class="nav-link-two-line" href="/alumni.html">Alumni in<br>Forces</a>
+        <a href="/cadets-corner.html">Cadet's Corner</a>
+        <a href="/contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -117,7 +128,7 @@
         <div class="event-grid">
           
           <!-- DG NCC Medallion -->
-          <article class="card reveal award-card" data-images='["assets/images/rishab.png"]'>
+          <article class="card reveal award-card" data-images='["assets/images/rishab.jpeg"]'>
             <h3>DG NCC Medallion</h3>
             <ul class="list">
               <li>CSUO Rishab S Rokhade (2022)</li>
@@ -125,8 +136,8 @@
             <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
-          <!-- DDG Commendation (Using rishab_c.jpeg and varda.png) -->
-          <article class="card reveal award-card" data-images='["assets/images/rani_commendation.png", "assets/images/rishab_c.jpeg", "assets/images/pooja_c.jpeg", "assets/images/varda.png", "assets/images/sagar_c.png", "assets/images/ananya.jpeg"]'>
+          <!-- DDG Commendation (Using rishab_c.png and varda.png) -->
+          <article class="card reveal award-card" data-images='["assets/images/rani_commendation.png", "assets/images/rishab_c.png", "assets/images/pooja_c.jpeg", "assets/images/varda.png", "assets/images/sagar_c.png", "assets/images/ananya.jpeg"]'>
             <h3>DDG Commendation</h3>
             <ul class="list">
               <li>Lt. Rani Mysore Srinivas (2022)</li>
@@ -141,7 +152,7 @@
             <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
-          <!-- Chief Minister's Commendation (2 photos) -->
+          <!-- Chief Minister's Commendation -->
           <article class="card reveal award-card" data-images='["assets/images/rani.jpeg", "assets/images/varsha.jpeg"]'>
             <h3>Chief Minister's Commendation</h3>
             <ul class="list">
@@ -165,6 +176,7 @@
     <button class="lightbox-next" type="button" aria-label="Next photo">&rarr;</button>
   </div>
 
+  <button class="scroll-top" type="button" aria-label="Scroll to top">&uarr;</button>
   <script defer src="/main.js"></script>
 </body>
 </html>
