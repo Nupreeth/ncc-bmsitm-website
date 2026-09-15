@@ -6,7 +6,7 @@
   <title>Commendations &amp; Awards</title>
   <link rel="stylesheet" href="/css/style.css">
   <style>
-    /* Lightbox image and arrow visibility fixes */
+    /* Lightbox image sizing */
     .lightbox-image {
       max-width: 600px;
       max-height: 80vh;
@@ -14,16 +14,22 @@
       height: auto;
       object-fit: contain;
     }
+    /* Fix lightbox arrow visibility with high contrast */
     .lightbox-prev,
     .lightbox-next {
-      background: rgba(0, 0, 0, 0.6) !important;
-      color: #fff !important;
-      border: 2px solid rgba(255, 255, 255, 0.8) !important;
+      background: #ffffff !important;
+      color: #000000 !important;
+      border: none !important;
       font-size: 24px !important;
-      padding: 10px 15px !important;
+      width: 44px !important;
+      height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       border-radius: 50% !important;
       cursor: pointer;
       z-index: 10002;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -66,8 +72,8 @@
             <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
-          <!-- DDG Commendation -->
-          <article class="card reveal award-card" data-images='["assets/images/rani_commendation.png", "assets/images/rishab.jpeg", "assets/images/pooja_c.jpeg", "assets/images/prajwal_c.png", "assets/images/sagar_c.png", "assets/images/ananya.jpeg"]'>
+          <!-- DDG Commendation (Using rishab_c.jpeg instead of rishab.jpeg) -->
+          <article class="card reveal award-card" data-images='["assets/images/rani_commendation.png", "assets/images/rishab_c.jpeg", "assets/images/pooja_c.jpeg", "assets/images/prajwal_c.png", "assets/images/sagar_c.png", "assets/images/ananya.jpeg"]'>
             <h3>DDG Commendation</h3>
             <ul class="list">
               <li>Lt. Rani Mysore Srinivas (2022)</li>
@@ -82,7 +88,7 @@
             <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
-          <!-- Chief Minister's Commendation (2 photos) -->
+          <!-- Chief Minister's Commendation -->
           <article class="card reveal award-card" data-images='["assets/images/rani.jpeg", "assets/images/varsha.jpeg"]'>
             <h3>Chief Minister's Commendation</h3>
             <ul class="list">
