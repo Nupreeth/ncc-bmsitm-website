@@ -524,7 +524,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initActivitiesFeed();
 });
 
-// Universal Lightbox Card Click Handler (Supports AITSC, RDC, & all dataset cards)
+// Universal Lightbox Card Click Handler
 document.addEventListener("click", (e) => {
   const card = e.target.closest("[data-images]");
   if (!card) return;
@@ -569,6 +569,6 @@ document.addEventListener("click", (e) => {
   const link = document.createElement('link');
   link.rel = 'icon';
   link.type = 'image/jpeg';
-  link.href = '/assets/images/NCC BMSITM logo.jpeg';
+  link.href = '/assets/images/favicon.jpeg';
   document.head.appendChild(link);
 })();
