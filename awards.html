@@ -37,18 +37,16 @@
         <div class="event-grid">
           
           <!-- DG NCC Medallion -->
-          <article class="card reveal">
+          <article class="card reveal award-card" data-images='["assets/images/rishab.jpeg"]'>
             <h3>DG NCC Medallion</h3>
             <ul class="list">
               <li>CSUO Rishab S Rokhade (2022)</li>
             </ul>
-            <div class="award-images" style="margin-top: 15px;">
-              <img src="assets/images/rishab.jpeg" alt="CSUO Rishab S Rokhade" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-            </div>
+            <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
-          <!-- DDG Commendation -->
-          <article class="card reveal">
+          <!-- DDG Commendation (Unique photos only) -->
+          <article class="card reveal award-card" data-images='["assets/images/rani_commendation.png", "assets/images/rishab.jpeg", "assets/images/pooja_c.jpeg", "assets/images/prajwal_c.png", "assets/images/sagar_c.png", "assets/images/ananya.jpeg"]'>
             <h3>DDG Commendation</h3>
             <ul class="list">
               <li>Lt. Rani Mysore Srinivas (2022)</li>
@@ -60,37 +58,32 @@
               <li>BQMS Ananya Gupta (2026)</li>
               <li>CPL Angom Lamyanba Meitei (2026)</li>
             </ul>
-            <div class="award-images" style="margin-top: 15px;">
-              <img src="assets/images/rani_commendation.png" alt="Lt. Rani Mysore Srinivas" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-              <img src="assets/images/rishab.jpeg" alt="CSUO Rishab S Rokhade" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-              <img src="assets/images/pooja_c.jpeg" alt="CSUO Pooja P" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-              <img src="assets/images/prajwal_c.png" alt="CSUO Varadaraj Prabhu G G" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-              <img src="assets/images/sagar_c.png" alt="BJUO Sagar B S" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-              <img src="assets/images/prajwal_c.png" alt="BJUO Prajwal V Dev" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-              <img src="assets/images/ananya.jpeg" alt="BQMS Ananya Gupta" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-              <img src="assets/images/ananya.jpeg" alt="CPL Angom Lamyanba Meitei" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-            </div>
+            <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
           <!-- Chief Minister's Commendation -->
-          <article class="card reveal">
+          <article class="card reveal award-card" data-images='["assets/images/deeksha_sethi_cm_c.jpg", "assets/images/rani.jpeg", "assets/images/varsha.jpeg"]'>
             <h3>Chief Minister's Commendation</h3>
             <ul class="list">
               <li>CSUO Deeksha Sethi (2021)</li>
               <li>Lt. Rani M. S. (2026)</li>
               <li>JUO Varsha B (2026)</li>
             </ul>
-            <div class="award-images" style="margin-top: 15px;">
-              <img src="assets/images/deeksha_sethi_cm_c.jpg" alt="CSUO Deeksha Sethi" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-              <img src="assets/images/rani.jpeg" alt="Lt. Rani M. S." style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-              <img src="assets/images/varsha.jpeg" alt="JUO Varsha B" style="width: 100%; border-radius: 4px; margin-bottom: 10px;">
-            </div>
+            <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox">
+    <button class="lightbox-close" type="button" aria-label="Close gallery">&times;</button>
+    <button class="lightbox-prev" type="button" aria-label="Previous photo">&larr;</button>
+    <img class="lightbox-image" src="" alt="" />
+    <button class="lightbox-next" type="button" aria-label="Next photo">&rarr;</button>
+  </div>
 
   <script defer src="/main.js"></script>
 </body>
