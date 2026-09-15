@@ -563,3 +563,12 @@ document.addEventListener("click", (e) => {
     window.Lightbox.open(imageSrc, title);
   }
 });
+
+// Automatically inject JPEG NCC Favicon Site-Wide
+(function() {
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/jpeg';
+  link.href = '/assets/images/NCC BMSITM logo.jpeg';
+  document.head.appendChild(link);
+})();
