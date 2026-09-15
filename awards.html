@@ -5,13 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Commendations &amp; Awards</title>
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Ensures lightbox popup images match the achievements sizing style */
+    .lightbox-image {
+      max-width: 600px;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Site Header / Navigation -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="logo">NCC BMSIT&amp;M</a>
+      <a href="index.html" class="logo">
+        <span class="logo-mark">
+          <img src="/assets/images/logo.png" alt="NCC Logo" onerror="this.style.display='none'">
+        </span>
+        <span class="logo-text">NCC BMSIT&amp;M</span>
+      </a>
       <button class="nav-toggle" aria-label="Open navigation">
         <span></span>
         <span></span>
@@ -21,6 +36,7 @@
         <button class="nav-close" aria-label="Close navigation">&times;</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
           <li><a href="awards.html" class="active">Awards</a></li>
           <li><a href="gallery.html">Gallery</a></li>
         </ul>
@@ -45,7 +61,7 @@
             <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
-          <!-- DDG Commendation (Unique photos only) -->
+          <!-- DDG Commendation -->
           <article class="card reveal award-card" data-images='["assets/images/rani_commendation.png", "assets/images/rishab.jpeg", "assets/images/pooja_c.jpeg", "assets/images/prajwal_c.png", "assets/images/sagar_c.png", "assets/images/ananya.jpeg"]'>
             <h3>DDG Commendation</h3>
             <ul class="list">
@@ -61,8 +77,8 @@
             <p class="gallery-hint" style="cursor: pointer; margin-top: 15px; font-size: 0.9rem; color: var(--ncc-gold, #c5a059);">&rarr; Click to view photos</p>
           </article>
 
-          <!-- Chief Minister's Commendation -->
-          <article class="card reveal award-card" data-images='["assets/images/deeksha_sethi_cm_c.jpg", "assets/images/rani.jpeg", "assets/images/varsha.jpeg"]'>
+          <!-- Chief Minister's Commendation (2 photos only) -->
+          <article class="card reveal award-card" data-images='["assets/images/rani.jpeg", "assets/images/varsha.jpeg"]'>
             <h3>Chief Minister's Commendation</h3>
             <ul class="list">
               <li>CSUO Deeksha Sethi (2021)</li>
