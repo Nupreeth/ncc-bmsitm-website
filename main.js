@@ -142,6 +142,7 @@ const openLightbox = (images, index = 0) => {
   lightboxImages = images;
   currentIndex = index;
   updateLightbox();
+  updateLightboxButtons();
   lightbox.classList.add("open");
 };
 
@@ -150,15 +151,25 @@ const closeLightbox = () => {
 };
 
 const showPrev = () => {
-  if (lightboxImages.length === 0) return;
-  currentIndex = (currentIndex - 1 + lightboxImages.length) % lightboxImages.length;
+  if (lightboxImages.length === 0 || currentIndex === 0) return;
+  currentIndex--;
   updateLightbox();
+  updateLightboxButtons();
 };
 
 const showNext = () => {
-  if (lightboxImages.length === 0) return;
-  currentIndex = (currentIndex + 1) % lightboxImages.length;
+  if (lightboxImages.length === 0 || currentIndex === lightboxImages.length - 1) return;
+  currentIndex++;
   updateLightbox();
+  updateLightboxButtons();
+};
+
+const updateLightboxButtons = () => {
+  if (!btnPrev || !btnNext) return;
+
+  btnPrev.style.display = currentIndex === 0 ? "none" : "flex";
+  btnNext.style.display =
+    currentIndex === lightboxImages.length - 1 ? "none" : "flex";
 };
 
 if (lightbox) {
