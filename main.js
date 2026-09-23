@@ -172,13 +172,7 @@ const updateLightboxButtons = () => {
     currentIndex === lightboxImages.length - 1 ? "none" : "flex";
 };
 
-const updateLightboxButtons = () => {
-  if (!btnPrev || !btnNext) return;
 
-  btnPrev.style.display = currentIndex === 0 ? "none" : "flex";
-  btnNext.style.display =
-    currentIndex === lightboxImages.length - 1 ? "none" : "flex";
-};
 
 if (lightbox) {
   const staticImages = Array.from(document.querySelectorAll(".gallery-item img"));
