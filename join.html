@@ -14,19 +14,24 @@
   <link rel="stylesheet" href="/navbar-polish.css" />
   <link rel="stylesheet" href="/theme-overrides.css" />
   <style id="hero-fullscreen">
-    :root { --header-h: 80px; }
-    .page-hero {
+    :root {
+      --header-h: 80px;
+      --hero-pad-left: clamp(20px, 3vw, 48px);
+    }
+    body .page-hero {
       position: relative;
-      display: flex;
-      align-items: center;
+      display: grid;
+      align-content: center;
       width: 100%;
+      height: auto !important;
       min-height: calc(100vh - var(--header-h)) !important;
       min-height: calc(100svh - var(--header-h)) !important;
-      padding-top: 40px;
-      padding-bottom: 40px;
+      margin: 0 !important;
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
       overflow: hidden;
     }
-    .page-hero .hero-media {
+    body .page-hero .hero-media {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -35,14 +40,14 @@
       border-radius: 0;
       z-index: 0;
     }
-    .page-hero .hero-media img {
+    body .page-hero .hero-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center center;
       display: block;
     }
-    .page-hero::after {
+    body .page-hero::after {
       content: "";
       position: absolute;
       inset: 0;
@@ -50,10 +55,23 @@
       z-index: 1;
       pointer-events: none;
     }
-    .page-hero .container {
+    body .page-hero > .container {
       position: relative;
       z-index: 2;
-      width: 100%;
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding-left: var(--hero-pad-left) !important;
+      padding-right: var(--hero-pad-left) !important;
+      text-align: left;
+    }
+    /* Join page: keep both faces visible (image anchored to top, text at bottom-left) */
+    body .page-hero.join-hero {
+      align-content: end;
+      padding-bottom: 56px !important;
+    }
+    body .page-hero.join-hero .hero-media img {
+      object-position: center top;
     }
     @media (max-width: 768px) {
       :root { --header-h: 64px; }
@@ -103,7 +121,7 @@
   </header>
 
   <main>
-    <section class="page-hero join-hero">
+    <section class="page-hero join-hero" style="height: auto !important; min-height: calc(100svh - 80px) !important;">
       <picture class="img-frame hero-media">
         <img src="/assets/images/join-hero.jpg" alt="Cadet in full NCC uniform" data-placeholder="true" loading="lazy" />
         <div class="img-placeholder">JOIN_HERO_IMAGE_PLACEHOLDER</div>
