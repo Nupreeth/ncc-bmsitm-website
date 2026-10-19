@@ -122,19 +122,47 @@ filterBars.forEach((bar) => {
   });
 });
 
+/* ------------------------------------------------------------------ */
+/* Lightbox (no looping, Esc to close, arrow keys, counter)            */
+/* ------------------------------------------------------------------ */
 const lightbox = document.querySelector(".lightbox");
 const lightboxImg = lightbox?.querySelector(".lightbox-image");
 const btnClose = lightbox?.querySelector(".lightbox-close");
 const btnPrev = lightbox?.querySelector(".lightbox-prev");
 const btnNext = lightbox?.querySelector(".lightbox-next");
+const lightboxCounter = lightbox?.querySelector(".lightbox-counter");
 let lightboxImages = [];
 let currentIndex = 0;
+
+const setHidden = (el, hide) => {
+  if (!el) return;
+  if (hide) {
+    el.style.setProperty("display", "none", "important");
+  } else {
+    el.style.removeProperty("display");
+  }
+};
 
 const updateLightbox = () => {
   if (!lightboxImg || lightboxImages.length === 0) return;
   const item = lightboxImages[currentIndex];
+  const fallbacks = Array.isArray(item.fallbacks) ? item.fallbacks.slice() : [];
+
+  lightboxImg.onerror = () => {
+    const next = fallbacks.shift();
+    if (next) lightboxImg.src = next;
+  };
   lightboxImg.src = item.src;
   lightboxImg.alt = item.alt || "Gallery image";
+
+  const total = lightboxImages.length;
+  if (lightboxCounter) {
+    lightboxCounter.textContent = total > 1 ? `${currentIndex + 1} / ${total}` : "";
+  }
+
+  // No looping: hide the arrow when there is nothing further in that direction
+  setHidden(btnPrev, currentIndex === 0);
+  setHidden(btnNext, currentIndex === total - 1);
 };
 
 const openLightbox = (images, index = 0) => {
@@ -143,22 +171,26 @@ const openLightbox = (images, index = 0) => {
   currentIndex = index;
   updateLightbox();
   lightbox.classList.add("open");
+  document.body.style.overflow = "hidden";
 };
 
 const closeLightbox = () => {
   lightbox?.classList.remove("open");
+  document.body.style.overflow = "";
 };
 
 const showPrev = () => {
-  if (lightboxImages.length === 0) return;
-  currentIndex = (currentIndex - 1 + lightboxImages.length) % lightboxImages.length;
-  updateLightbox();
+  if (currentIndex > 0) {
+    currentIndex -= 1;
+    updateLightbox();
+  }
 };
 
 const showNext = () => {
-  if (lightboxImages.length === 0) return;
-  currentIndex = (currentIndex + 1) % lightboxImages.length;
-  updateLightbox();
+  if (currentIndex < lightboxImages.length - 1) {
+    currentIndex += 1;
+    updateLightbox();
+  }
 };
 
 if (lightbox) {
@@ -179,6 +211,17 @@ if (lightbox) {
       closeLightbox();
     }
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("open")) return;
+    if (event.key === "Escape") {
+      closeLightbox();
+    } else if (event.key === "ArrowRight") {
+      showNext();
+    } else if (event.key === "ArrowLeft") {
+      showPrev();
+    }
+  });
 }
 
 window.Lightbox = {
@@ -187,7 +230,8 @@ window.Lightbox = {
     if (Array.isArray(list) && list.length) {
       const mapped = list.map((item) => ({
         src: item.image || item.src,
-        alt: item.title || item.alt || "Gallery image"
+        alt: item.title || item.alt || "Gallery image",
+        fallbacks: item.fallbacks
       }));
       openLightbox(mapped, index);
       return;
@@ -524,15 +568,34 @@ document.addEventListener("DOMContentLoaded", () => {
   initActivitiesFeed();
 });
 
+/* ------------------------------------------------------------------ */
+/* AITSC poster galleries (Achievements page)                          */
+/* Images live in /assets/images/aitsc/ and are tried in this order:   */
+/* .png, .jpg, .jpeg, .webp                                            */
+/* ------------------------------------------------------------------ */
+const AITSC_FOLDER = "/assets/images/";
+const AITSC_EXTS = [".jpg", ".png", ".jpeg", ".webp"];
+
+const aitscPoster = (name, label) => ({
+  src: AITSC_FOLDER + name + AITSC_EXTS[0],
+  fallbacks: AITSC_EXTS.slice(1).map((ext) => AITSC_FOLDER + name + ext),
+  alt: label
+});
+
 const aitscGalleries = {
   "2025": [
-    { src: "/assets/aitsc-gallery/2025/p1.png", alt: "AITSC 2025 photo 1" }
+    aitscPoster("varsha", "JUO Varsha B - AITSC 2025"),
+    aitscPoster("ananya", "BQMS Ananya Gupta - AITSC 2025"),
+    aitscPoster("surekha", "BJUO Surekha S - AITSC 2025"),
+    aitscPoster("masood", "Masood Khan - AITSC 2025"),
+    aitscPoster("aatif", "LCPL Aatif Mohideen - AITSC 2025"),
+    aitscPoster("bhargav", "LCPL Bhargava Krishna - AITSC 2025")
   ],
   "2024": [
-    { src: "/assets/aitsc-gallery/2024/p2.png", alt: "AITSC 2024 photo 1" }
+    aitscPoster("varada", "CSUO Varadaraj Prabhu G G - AITSC 2024")
   ],
   "2023": [
-    { src: "/assets/aitsc-gallery/2023/p3.png", alt: "AITSC 2023 photo 1" }
+    aitscPoster("pooja", "CSUO Pooja P - AITSC 2023")
   ]
 };
 
