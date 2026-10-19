@@ -599,12 +599,100 @@ const aitscGalleries = {
   ]
 };
 
+
+
 document.querySelectorAll("[data-aitsc-year]").forEach((card) => {
   card.addEventListener("click", () => {
     const year = card.dataset.aitscYear;
     const images = aitscGalleries[year];
     if (images && images.length) {
       window.Lightbox.open(null, `AITSC ${year}`, images, 0);
+    }
+  });
+});
+
+/* ------------------------------------------------------------------ */
+/* RDC poster galleries (Achievements page)                            */
+/* Images live in /assets/images/ (sagar, prajwal, deeksha)            */
+/* ------------------------------------------------------------------ */
+const RDC_FOLDER = "/assets/images/";
+const RDC_EXTS = [".png", ".jpg", ".jpeg", ".webp"];
+
+const rdcPoster = (name, label) => ({
+  src: RDC_FOLDER + name + RDC_EXTS[0],
+  fallbacks: RDC_EXTS.slice(1).map((ext) => RDC_FOLDER + name + ext),
+  alt: label
+});
+
+const rdcGalleries = {
+  "2025": [
+    rdcPoster("sagar", "BJUO Sagar B S - RDC 2025"),
+    rdcPoster("prajwal", "BJUO Prajwal V Dev - RDC 2025")
+  ],
+  "2021": [
+    rdcPoster("deeksha", "CSUO Deeksha Sethi - RDC 2021")
+  ]
+};
+
+document.querySelectorAll("[data-rdc-year]").forEach((card) => {
+  card.addEventListener("click", () => {
+    const year = card.dataset.rdcYear;
+    const images = rdcGalleries[year];
+    if (images && images.length) {
+      window.Lightbox.open(null, `RDC ${year}`, images, 0);
+    }
+  });
+});
+
+/* ------------------------------------------------------------------ */
+/* Awards galleries (Awards page)                                      */
+/* Images live in /assets/images/. Each photo lists the file names to  */
+/* try, in order; the first one that exists is shown.                  */
+/* ------------------------------------------------------------------ */
+const AWARD_FOLDER = "/assets/images/";
+const AWARD_EXTS = [".png", ".jpg", ".jpeg", ".webp"];
+
+const awardPhoto = (names, label) => {
+  const list = Array.isArray(names) ? names : [names];
+  const urls = [];
+  list.forEach((name) => {
+    AWARD_EXTS.forEach((ext) => urls.push(AWARD_FOLDER + name + ext));
+  });
+  return { src: urls[0], fallbacks: urls.slice(1), alt: label };
+};
+
+const awardGalleries = {
+  dg: [
+    awardPhoto("rishabh", "CSUO Rishab S Rokhade - DG NCC Medallion 2022")
+  ],
+  ddg: [
+    awardPhoto("rani_DDG", "Lt. Rani Mysore Srinivas - DDG Commendation 2022"),
+    awardPhoto("rishabh", "CSUO Rishab S Rokhade - DDG Commendation 2022"),
+    awardPhoto("pooja", "CSUO Pooja P - DDG Commendation 2023"),
+    awardPhoto("varadaa", "CSUO Varadaraj Prabhu G G - DDG Commendation 2025"),
+    awardPhoto("sagarr", "BJUO Sagar B S - DDG Commendation 2025"),
+    awardPhoto("prajwall", "BJUO Prajwal V Dev - DDG Commendation 2025"),
+    awardPhoto("ananya_angom", "BQMS Ananya Gupta and CPL Angom Lamyanba Meitei - DDG Commendation 2026")
+  ],
+  cm: [
+    awardPhoto("deeksha", "CSUO Deeksha Sethi - CM Commendation 2021"),
+    awardPhoto("rani_cm", "Lt. Rani M. S. - CM Commendation 2026"),
+    awardPhoto("varshaa", "JUO Varsha B - CM Commendation 2026")
+  ]
+};
+
+const awardTitles = {
+  dg: "DG NCC Medallion",
+  ddg: "DDG Commendation",
+  cm: "Chief Minister's Commendation"
+};
+
+document.querySelectorAll("[data-award]").forEach((card) => {
+  card.addEventListener("click", () => {
+    const key = card.dataset.award;
+    const images = awardGalleries[key];
+    if (images && images.length) {
+      window.Lightbox.open(null, awardTitles[key], images, 0);
     }
   });
 });
