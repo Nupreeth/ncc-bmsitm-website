@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Activities | NCC BMSITM</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <meta name="description" content="Training, service drives, ceremonial parades, and camp activities conducted by NCC BMSITM." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,6 +14,71 @@
   <link rel="stylesheet" href="/css/navbar-overrides.css" />
   <link rel="stylesheet" href="/navbar-polish.css" />
   <link rel="stylesheet" href="/theme-overrides.css" />
+  <style id="activities-hero-style">
+    .act-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: calc(100svh - 88px);
+      min-height: 480px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #1a2338;
+    }
+    .act-hero__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      z-index: 0;
+    }
+    .act-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15));
+      z-index: 1;
+      pointer-events: none;
+    }
+    .act-hero__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 3vw;
+      text-align: left;
+    }
+    .act-hero__crumb {
+      margin: 0 0 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .act-hero__title {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1.1;
+      color: #ffffff;
+    }
+    .act-hero__sub {
+      margin: 14px 0 0;
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+      color: rgba(255, 255, 255, 0.9);
+    }
+    @media (max-width: 768px) {
+      .act-hero { height: calc(100svh - 64px); min-height: 400px; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -57,15 +123,12 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <picture class="img-frame hero-media">
-        <img src="/assets/images/activities-hero.jpg" alt="Cadets in outdoor service activity" data-placeholder="true" loading="lazy" />
-        <div class="img-placeholder">ACTIVITIES_HERO_IMAGE_PLACEHOLDER</div>
-      </picture>
-      <div class="container">
-        <p class="breadcrumb">Home &gt; Activities</p>
-        <h1>Activities</h1>
-        <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.75); text-align: left; margin: 12px 0 0;">Training &middot; Service &middot; Ceremony &middot; Outreach</p>
+    <section class="act-hero">
+      <img class="act-hero__img" src="/assets/images/activities-hero.jpg?v=2" alt="NCC BMSITM cadets with the 39 Karnataka Battalion banner" />
+      <div class="act-hero__content">
+        <p class="act-hero__crumb">Home &gt; Activities</p>
+        <h1 class="act-hero__title">Activities</h1>
+        <p class="act-hero__sub">Training &middot; Service &middot; Ceremony &middot; Outreach</p>
       </div>
     </section>
 

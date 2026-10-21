@@ -4,11 +4,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Achievements | NCC BMSITM</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <meta name="description" content="Year-wise achievements, national camp selections, commendations, and honours earned by NCC BMSITM cadets." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/navbar-overrides.css" />
+  <link rel="stylesheet" href="/navbar-polish.css" />
+  <link rel="stylesheet" href="/theme-overrides.css" />
+  <style id="hero-fullscreen">
+    :root {
+      --header-h: 80px;
+      --hero-pad-left: clamp(20px, 3vw, 48px);
+    }
+    body .page-hero {
+      position: relative;
+      display: grid;
+      align-content: center;
+      width: 100%;
+      height: auto !important;
+      min-height: calc(100vh - var(--header-h)) !important;
+      min-height: calc(100svh - var(--header-h)) !important;
+      margin: 0 !important;
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+      overflow: hidden;
+    }
+    body .page-hero .hero-media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 0;
+      z-index: 0;
+    }
+    body .page-hero .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+    body .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15));
+      z-index: 1;
+      pointer-events: none;
+    }
+    body .page-hero > .container {
+      position: relative;
+      z-index: 2;
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding-left: var(--hero-pad-left) !important;
+      padding-right: var(--hero-pad-left) !important;
+      text-align: left;
+    }
+    @media (max-width: 768px) {
+      :root { --header-h: 64px; }
+    }
+  </style>
+  <style id="lightbox-style">
+    body .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10, 14, 24, 0.82);
+      padding: 24px;
+    }
+    body .lightbox.open { display: flex; }
+    body .lightbox-frame {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 92vw;
+      max-height: 88vh;
+      padding: 10px;
+      background: #111;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    body .lightbox-image {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: calc(88vh - 20px);
+      object-fit: contain;
+      border-radius: 6px;
+    }
+    body .lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: #c8102e;
+      color: #fff;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    body .lightbox-close:hover { background: #a30d25; }
+    body .lightbox-prev,
+    body .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      padding: 0 0 4px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: #111;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    body .lightbox-prev { left: -56px; }
+    body .lightbox-next { right: -56px; }
+    body .lightbox-prev:hover,
+    body .lightbox-next:hover { background: #fff; }
+    body .lightbox-counter {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 700px) {
+      body .lightbox-prev { left: 8px; }
+      body .lightbox-next { right: 8px; }
+      body .lightbox-close { top: 8px; right: 8px; }
+    }
+  </style>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/navbar-overrides.css" />
   <link rel="stylesheet" href="navbar-polish.css" />
@@ -43,6 +196,15 @@
 
       <nav id="primary-nav" class="nav-links">
         <button class="nav-close" type="button" aria-label="Close navigation">X</button>
+        <a href="/index.html">Home</a>
+        <a class="active" href="/achievements.html">Achievements</a>
+        <a href="/awards.html">Awards</a>
+        <a href="/timeline.html">Timeline</a>
+        <a href="/activities.html">Activities</a>
+        <a href="/join.html">Join NCC</a>
+        <a class="nav-link-two-line" href="/alumni.html">Alumni in<br>Forces</a>
+        <a href="/cadets-corner.html">Cadet's Corner</a>
+        <a href="/contact.html">Contact</a>
         <a href="index.html">Home</a>
         <a class="active" href="achievements.html">Achievements</a>
         <a href="awards.html">Awards</a>
@@ -57,7 +219,7 @@
   </header>
 
   <main>
-    <section class="page-hero">
+    <section class="page-hero" style="height: auto !important; min-height: calc(100svh - 80px) !important;">
       <picture class="img-frame hero-media">
         <img src="assets/images/achievements-hero.jpg" alt="Cadets at an award ceremony" data-placeholder="true" loading="lazy" />
         <div class="img-placeholder">ACHIEVEMENTS_HERO_IMAGE_PLACEHOLDER</div>
@@ -116,6 +278,7 @@
         <h2 class="heading-serif">All India Thal Sainik Camp (AITSC)</h2>
         <div class="rule" style="margin-left: 0;"></div>
         <div class="event-grid">
+          <article class="card reveal aitsc-card" data-aitsc-year="2025" style="cursor: pointer;">
           <article class="card reveal aitsc-card" data-title="AITSC 2025" data-images='[
             {"src": "assets/images/8.jpg", "alt": "AITSC 2025 Photo 1"},
             {"src": "assets/images/9.jpg", "alt": "AITSC 2025 Photo 2"},
@@ -136,6 +299,7 @@
             <p class="gallery-hint" style="color: var(--ncc-gold, #c5a059); font-weight: 600; margin-top: 12px;">Click to view photos &rarr;</p>
           </article>
 
+          <article class="card reveal aitsc-card" data-aitsc-year="2024" style="cursor: pointer;">
           <article class="card reveal aitsc-card" data-title="AITSC 2024" data-images='[
             {"src": "assets/images/3.jpg", "alt": "AITSC 2024 Photo 1"}
           ]' style="cursor: pointer;">
@@ -144,6 +308,7 @@
             <p class="gallery-hint" style="color: var(--ncc-gold, #c5a059); font-weight: 600; margin-top: 12px;">Click to view photos &rarr;</p>
           </article>
 
+          <article class="card reveal aitsc-card" data-aitsc-year="2023" style="cursor: pointer;">
           <article class="card reveal aitsc-card" data-title="AITSC 2023" data-images='[
             {"src": "assets/images/2.jpg", "alt": "AITSC 2023 Photo 1"}
           ]' style="cursor: pointer;">
@@ -161,6 +326,7 @@
         <h2 class="heading-serif">Republic Day Camp (RDC)</h2>
         <div class="rule" style="margin-left: 0;"></div>
         <div class="event-grid">
+          <article class="card reveal rdc-card" data-rdc-year="2025" style="cursor: pointer;">
           <article class="card reveal rdc-card" data-title="RDC 2025" data-images='[
             {"src": "assets/images/sagar.png", "alt": "BJUO Sagar B S - RDC 2025"},
             {"src": "assets/images/prajwal.png", "alt": "BJUO Prajwal V Dev - RDC 2025"}
@@ -173,6 +339,7 @@
             <p class="gallery-hint" style="color: var(--ncc-gold, #c5a059); font-weight: 600; margin-top: 12px;">Click to view photos &rarr;</p>
           </article>
 
+          <article class="card reveal rdc-card" data-rdc-year="2021" style="cursor: pointer;">
           <article class="card reveal rdc-card" data-title="RDC 2021" data-images='[
             {"src": "assets/images/deeksha.png", "alt": "CSUO Deeksha Sethi - RDC 2021"}
           ]' style="cursor: pointer;">
@@ -371,6 +538,15 @@
       <div>
         <h4>Quick Links</h4>
         <div class="footer-links">
+          <a href="/index.html">Home</a>
+          <a href="/achievements.html">Achievements</a>
+          <a href="/awards.html">Awards</a>
+          <a href="/timeline.html">Timeline</a>
+          <a href="/activities.html">Activities</a>
+          <a href="/join.html">Join NCC</a>
+          <a href="/alumni.html">Alumni</a>
+          <a href="/cadets-corner.html">Cadet's Corner</a>
+          <a href="/contact.html">Contact</a>
           <a href="index.html">Home</a>
           <a href="achievements.html">Achievements</a>
           <a href="awards.html">Awards</a>
@@ -396,6 +572,20 @@
   </footer>
 
   <button class="scroll-top" type="button" aria-label="Scroll to top">&uarr;</button>
+
+  <div class="lightbox" aria-hidden="true">
+    <div class="lightbox-frame">
+      <button class="lightbox-close" type="button" aria-label="Close gallery">&times;</button>
+      <button class="lightbox-prev" type="button" aria-label="Previous photo">&#8249;</button>
+      <img class="lightbox-image" src="" alt="" />
+      <button class="lightbox-next" type="button" aria-label="Next photo">&#8250;</button>
+      <div class="lightbox-counter"></div>
+    </div>
+  </div>
+
+  <script defer src="/main.js"></script>
+</body>
+</html>
   <div class="lightbox">
     <button class="lightbox-close" type="button" aria-label="Close gallery">&times;</button>
     <button class="lightbox-prev" type="button" aria-label="Previous photo">&larr;</button>

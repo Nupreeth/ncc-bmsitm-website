@@ -122,19 +122,47 @@ filterBars.forEach((bar) => {
   });
 });
 
+/* ------------------------------------------------------------------ */
+/* Lightbox (no looping, Esc to close, arrow keys, counter)            */
+/* ------------------------------------------------------------------ */
 const lightbox = document.querySelector(".lightbox");
 const lightboxImg = lightbox?.querySelector(".lightbox-image");
 const btnClose = lightbox?.querySelector(".lightbox-close");
 const btnPrev = lightbox?.querySelector(".lightbox-prev");
 const btnNext = lightbox?.querySelector(".lightbox-next");
+const lightboxCounter = lightbox?.querySelector(".lightbox-counter");
 let lightboxImages = [];
 let currentIndex = 0;
+
+const setHidden = (el, hide) => {
+  if (!el) return;
+  if (hide) {
+    el.style.setProperty("display", "none", "important");
+  } else {
+    el.style.removeProperty("display");
+  }
+};
 
 const updateLightbox = () => {
   if (!lightboxImg || lightboxImages.length === 0) return;
   const item = lightboxImages[currentIndex];
+  const fallbacks = Array.isArray(item.fallbacks) ? item.fallbacks.slice() : [];
+
+  lightboxImg.onerror = () => {
+    const next = fallbacks.shift();
+    if (next) lightboxImg.src = next;
+  };
   lightboxImg.src = item.src;
   lightboxImg.alt = item.alt || "Gallery image";
+
+  const total = lightboxImages.length;
+  if (lightboxCounter) {
+    lightboxCounter.textContent = total > 1 ? `${currentIndex + 1} / ${total}` : "";
+  }
+
+  // No looping: hide the arrow when there is nothing further in that direction
+  setHidden(btnPrev, currentIndex === 0);
+  setHidden(btnNext, currentIndex === total - 1);
 };
 
 const openLightbox = (images, index = 0) => {
@@ -144,13 +172,26 @@ const openLightbox = (images, index = 0) => {
   updateLightbox();
   updateLightboxButtons();
   lightbox.classList.add("open");
+  document.body.style.overflow = "hidden";
 };
 
 const closeLightbox = () => {
   lightbox?.classList.remove("open");
+  document.body.style.overflow = "";
 };
 
 const showPrev = () => {
+  if (currentIndex > 0) {
+    currentIndex -= 1;
+    updateLightbox();
+  }
+};
+
+const showNext = () => {
+  if (currentIndex < lightboxImages.length - 1) {
+    currentIndex += 1;
+    updateLightbox();
+  }
   if (lightboxImages.length === 0 || currentIndex === 0) return;
   currentIndex--;
   updateLightbox();
@@ -192,6 +233,17 @@ if (lightbox) {
       closeLightbox();
     }
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("open")) return;
+    if (event.key === "Escape") {
+      closeLightbox();
+    } else if (event.key === "ArrowRight") {
+      showNext();
+    } else if (event.key === "ArrowLeft") {
+      showPrev();
+    }
+  });
 }
 
 window.Lightbox = {
@@ -200,7 +252,8 @@ window.Lightbox = {
     if (Array.isArray(list) && list.length) {
       const mapped = list.map((item) => ({
         src: item.image || item.src,
-        alt: item.title || item.alt || "Gallery image"
+        alt: item.title || item.alt || "Gallery image",
+        fallbacks: item.fallbacks
       }));
       openLightbox(mapped, index);
       return;
@@ -537,6 +590,134 @@ document.addEventListener("DOMContentLoaded", () => {
   initActivitiesFeed();
 });
 
+/* ------------------------------------------------------------------ */
+/* AITSC poster galleries (Achievements page)                          */
+/* Images live in /assets/images/aitsc/ and are tried in this order:   */
+/* .png, .jpg, .jpeg, .webp                                            */
+/* ------------------------------------------------------------------ */
+const AITSC_FOLDER = "/assets/images/";
+const AITSC_EXTS = [".jpg", ".png", ".jpeg", ".webp"];
+
+const aitscPoster = (name, label) => ({
+  src: AITSC_FOLDER + name + AITSC_EXTS[0],
+  fallbacks: AITSC_EXTS.slice(1).map((ext) => AITSC_FOLDER + name + ext),
+  alt: label
+});
+
+const aitscGalleries = {
+  "2025": [
+    aitscPoster("varsha", "JUO Varsha B - AITSC 2025"),
+    aitscPoster("ananya", "BQMS Ananya Gupta - AITSC 2025"),
+    aitscPoster("surekha", "BJUO Surekha S - AITSC 2025"),
+    aitscPoster("masood", "Masood Khan - AITSC 2025"),
+    aitscPoster("aatif", "LCPL Aatif Mohideen - AITSC 2025"),
+    aitscPoster("bhargav", "LCPL Bhargava Krishna - AITSC 2025")
+  ],
+  "2024": [
+    aitscPoster("varada", "CSUO Varadaraj Prabhu G G - AITSC 2024")
+  ],
+  "2023": [
+    aitscPoster("pooja", "CSUO Pooja P - AITSC 2023")
+  ]
+};
+
+
+
+document.querySelectorAll("[data-aitsc-year]").forEach((card) => {
+  card.addEventListener("click", () => {
+    const year = card.dataset.aitscYear;
+    const images = aitscGalleries[year];
+    if (images && images.length) {
+      window.Lightbox.open(null, `AITSC ${year}`, images, 0);
+    }
+  });
+});
+
+/* ------------------------------------------------------------------ */
+/* RDC poster galleries (Achievements page)                            */
+/* Images live in /assets/images/ (sagar, prajwal, deeksha)            */
+/* ------------------------------------------------------------------ */
+const RDC_FOLDER = "/assets/images/";
+const RDC_EXTS = [".png", ".jpg", ".jpeg", ".webp"];
+
+const rdcPoster = (name, label) => ({
+  src: RDC_FOLDER + name + RDC_EXTS[0],
+  fallbacks: RDC_EXTS.slice(1).map((ext) => RDC_FOLDER + name + ext),
+  alt: label
+});
+
+const rdcGalleries = {
+  "2025": [
+    rdcPoster("sagar", "BJUO Sagar B S - RDC 2025"),
+    rdcPoster("prajwal", "BJUO Prajwal V Dev - RDC 2025")
+  ],
+  "2021": [
+    rdcPoster("deeksha", "CSUO Deeksha Sethi - RDC 2021")
+  ]
+};
+
+document.querySelectorAll("[data-rdc-year]").forEach((card) => {
+  card.addEventListener("click", () => {
+    const year = card.dataset.rdcYear;
+    const images = rdcGalleries[year];
+    if (images && images.length) {
+      window.Lightbox.open(null, `RDC ${year}`, images, 0);
+    }
+  });
+});
+
+/* ------------------------------------------------------------------ */
+/* Awards galleries (Awards page)                                      */
+/* Images live in /assets/images/. Each photo lists the file names to  */
+/* try, in order; the first one that exists is shown.                  */
+/* ------------------------------------------------------------------ */
+const AWARD_FOLDER = "/assets/images/";
+const AWARD_EXTS = [".png", ".jpg", ".jpeg", ".webp"];
+
+const awardPhoto = (names, label) => {
+  const list = Array.isArray(names) ? names : [names];
+  const urls = [];
+  list.forEach((name) => {
+    AWARD_EXTS.forEach((ext) => urls.push(AWARD_FOLDER + name + ext));
+  });
+  return { src: urls[0], fallbacks: urls.slice(1), alt: label };
+};
+
+const awardGalleries = {
+  dg: [
+    awardPhoto("rishabh", "CSUO Rishab S Rokhade - DG NCC Medallion 2022")
+  ],
+  ddg: [
+    awardPhoto("rani_DDG", "Lt. Rani Mysore Srinivas - DDG Commendation 2022"),
+    awardPhoto("rishabh", "CSUO Rishab S Rokhade - DDG Commendation 2022"),
+    awardPhoto("pooja", "CSUO Pooja P - DDG Commendation 2023"),
+    awardPhoto("varadaa", "CSUO Varadaraj Prabhu G G - DDG Commendation 2025"),
+    awardPhoto("sagarr", "BJUO Sagar B S - DDG Commendation 2025"),
+    awardPhoto("prajwall", "BJUO Prajwal V Dev - DDG Commendation 2025"),
+    awardPhoto("ananya_angom", "BQMS Ananya Gupta and CPL Angom Lamyanba Meitei - DDG Commendation 2026")
+  ],
+  cm: [
+    awardPhoto("deeksha", "CSUO Deeksha Sethi - CM Commendation 2021"),
+    awardPhoto("rani_cm", "Lt. Rani M. S. - CM Commendation 2026"),
+    awardPhoto("varshaa", "JUO Varsha B - CM Commendation 2026")
+  ]
+};
+
+const awardTitles = {
+  dg: "DG NCC Medallion",
+  ddg: "DDG Commendation",
+  cm: "Chief Minister's Commendation"
+};
+
+document.querySelectorAll("[data-award]").forEach((card) => {
+  card.addEventListener("click", () => {
+    const key = card.dataset.award;
+    const images = awardGalleries[key];
+    if (images && images.length) {
+      window.Lightbox.open(null, awardTitles[key], images, 0);
+    }
+  });
+});
 // Universal Lightbox Card Click Handler
 document.addEventListener("click", (e) => {
   const card = e.target.closest("[data-images]");
