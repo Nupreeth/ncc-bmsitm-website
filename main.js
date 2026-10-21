@@ -170,6 +170,7 @@ const openLightbox = (images, index = 0) => {
   lightboxImages = images;
   currentIndex = index;
   updateLightbox();
+  updateLightboxButtons();
   lightbox.classList.add("open");
   document.body.style.overflow = "hidden";
 };
@@ -191,7 +192,28 @@ const showNext = () => {
     currentIndex += 1;
     updateLightbox();
   }
+  if (lightboxImages.length === 0 || currentIndex === 0) return;
+  currentIndex--;
+  updateLightbox();
+  updateLightboxButtons();
 };
+
+const showNext = () => {
+  if (lightboxImages.length === 0 || currentIndex === lightboxImages.length - 1) return;
+  currentIndex++;
+  updateLightbox();
+  updateLightboxButtons();
+};
+
+const updateLightboxButtons = () => {
+  if (!btnPrev || !btnNext) return;
+
+  btnPrev.style.display = currentIndex === 0 ? "none" : "flex";
+  btnNext.style.display =
+    currentIndex === lightboxImages.length - 1 ? "none" : "flex";
+};
+
+
 
 if (lightbox) {
   const staticImages = Array.from(document.querySelectorAll(".gallery-item img"));
@@ -696,3 +718,51 @@ document.querySelectorAll("[data-award]").forEach((card) => {
     }
   });
 });
+// Universal Lightbox Card Click Handler
+document.addEventListener("click", (e) => {
+  const card = e.target.closest("[data-images]");
+  if (!card) return;
+
+  const rawImages = card.dataset.images;
+  const title = card.dataset.title || card.querySelector("h3")?.innerText || "Gallery";
+
+  if (!rawImages) return;
+
+  try {
+    const parsedImages = JSON.parse(rawImages);
+    const imageList = parsedImages.map((item) => {
+      if (typeof item === "string") {
+        return { src: item, alt: title };
+      }
+      return { src: item.src, alt: item.alt || title };
+    });
+
+    if (imageList.length > 0) {
+      window.Lightbox.open(imageList[0].src, title, imageList, 0);
+    }
+  } catch (err) {
+    console.error("Failed to parse card images JSON:", err);
+  }
+});
+
+// Awards Name Lightbox Click Handler
+document.addEventListener("click", (e) => {
+  const cadet = e.target.closest(".award-cadet");
+  if (!cadet) return;
+
+  const imageSrc = cadet.dataset.image;
+  const title = cadet.dataset.title || cadet.textContent.trim();
+
+  if (imageSrc && window.Lightbox) {
+    window.Lightbox.open(imageSrc, title);
+  }
+});
+
+// Automatically inject JPEG NCC Favicon Site-Wide
+(function() {
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/jpeg';
+  link.href = '/assets/images/favicon.jpeg';
+  document.head.appendChild(link);
+})();
